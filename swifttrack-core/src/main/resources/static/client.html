@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Client Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="navbar">SwiftTrack - Client Dashboard</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Submit New Order</h2>
+        <input id="customerName" placeholder="Customer Name">
+        <input id="address" placeholder="Delivery Address">
+        <button class="btn-primary" onclick="submitOrder()">Submit Order</button>
+    </div>
+
+    <div class="card">
+        <h2>My Orders</h2>
+        <div id="orders"></div>
+    </div>
+
+    <div class="card">
+        <h2>Track Order</h2>
+        <a href="track.html">
+            <button class="btn-success">Go to Tracking</button>
+        </a>
+    </div>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

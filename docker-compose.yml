@@ -1,0 +1,83 @@
+services:
+  eureka:
+    build: ./eureka-server
+    container_name: eureka
+    ports:
+      - "8761:8761"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: swifttrack
+      POSTGRES_USER: swift
+      POSTGRES_PASSWORD: swift
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U swift -d swifttrack"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  swifttrack-core:
+    build: ./swifttrack-core
+    container_name: swifttrack-core
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_started
+      eureka:
+        condition: service_started
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/swifttrack
+      SPRING_DATASOURCE_USERNAME: swift
+      SPRING_DATASOURCE_PASSWORD: swift
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
+      WMS_HOST: wms-tcp
+      WMS_PORT: "9099"
+
+  cms-soap:
+    build: ./cms-soap
+    container_name: cms-soap
+    depends_on:
+      - eureka
+    ports:
+      - "8081:8081"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
+
+  ros-rest:
+    build: ./ros-rest
+    container_name: ros-rest
+    depends_on:
+      - eureka
+    ports:
+      - "8082:8082"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka
+      ROS_FAIL_RATE: "0.0"  # set 0.5 to demo retries
+
+  wms-tcp:
+    build: ./wms-tcp
+    container_name: wms-tcp
+    depends_on:
+      - eureka
+    ports:
+      - "9099:9099"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka:8761/eureka

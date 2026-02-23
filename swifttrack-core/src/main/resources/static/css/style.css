@@ -1,0 +1,122 @@
+/* ===== Global Styles ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+}
+
+h1, h2 {
+    margin-bottom: 15px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background-color: #1e3a8a;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ===== Card Style ===== */
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Input Fields ===== */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* ===== Buttons ===== */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-success {
+    background-color: #16a34a;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc2626;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #15803d;
+}
+
+.btn-danger:hover {
+    background-color: #b91c1c;
+}
+
+/* ===== Order List ===== */
+.order-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+/* ===== Status Colors ===== */
+.status-pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-processing {
+    color: #2563eb;
+    font-weight: bold;
+}
+
+.status-delivered {
+    color: green;
+    font-weight: bold;
+}
+
+.status-failed {
+    color: red;
+    font-weight: bold;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+    }
+}
