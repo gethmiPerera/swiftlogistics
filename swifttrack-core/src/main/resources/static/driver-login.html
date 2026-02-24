@@ -1,23 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Driver Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Login – SwiftTrack</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="navbar">Driver Login</div>
+<!-- DRIVER LOGIN PAGE --> 
+<!-- Mock authentication – submits to driver.html on success --> 
 
-<div class="container">
-    <div class="card">
-        <h2>Driver Login</h2>
-        <input placeholder="Driver ID">
-        <input type="password" placeholder="Password">
-        <a href="driver.html">
-            <button class="btn-success">Login</button>
-        </a>
+<div class="auth-wrapper">
+    <div class="auth-box">
+
+        <div class="logo-text">Swift<span>Track</span></div>
+        <p class="subtitle">Driver Portal Login</p>
+
+        <form id="driver-login-form">
+            <div class="form-group">
+                <label for="driverId">Driver ID</label>
+                <input type="text" id="driverId" placeholder="e.g. DRV-001" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block btn-lg mt-1">Sign In</button>
+        </form>
+
+        <p class="text-center mt-2 text-muted" style="font-size:var(--font-sm)">
+            Demo credentials: <strong>DRV-001</strong> / <strong>demo123</strong>
+        </p>
+
+        <p class="text-center mt-2 text-muted" style="font-size:var(--font-sm)">
+            <a href="index.html" style="color:var(--secondary-color)">&larr; Back to Home</a>
+        </p>
+
     </div>
 </div>
+
+<!-- Login Script (mock auth) -->
+<script>
+    document.getElementById("driver-login-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const driverId = document.getElementById("driverId").value.trim();
+        const pass     = document.getElementById("password").value.trim();
+
+        if (!driverId || !pass) {
+            alert("Please enter Driver ID and password.");
+            return;
+        }
+
+        // Simulate API delay
+        const btn = this.querySelector("button[type=submit]");
+        btn.textContent = "Signing in…";
+        btn.disabled = true;
+
+        setTimeout(() => {
+            sessionStorage.setItem("st_user", JSON.stringify({
+                name: "Kasun Silva",
+                driverId: driverId,
+                role: "driver",
+                token: "mock-jwt-token-driver"
+            }));
+            window.location.href = "driver.html";
+        }, 800);
+    });
+</script>
 
 </body>
 </html>
