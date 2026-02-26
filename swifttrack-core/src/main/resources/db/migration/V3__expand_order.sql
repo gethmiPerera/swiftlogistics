@@ -1,0 +1,4 @@
+ALTER TABLE orders ADD COLUMN customer_name VARCHAR(128);
+ALTER TABLE orders ADD COLUMN contact_number VARCHAR(32);
+ALTER TABLE orders ADD COLUMN driver_id VARCHAR(32);
+ALTER TABLE orders ADD COLUMN display_id VARCHAR(16);

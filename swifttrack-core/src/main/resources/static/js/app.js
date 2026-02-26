@@ -2,65 +2,40 @@
 
 "use strict";
 
-/* MOCK DATA  –  Simulated JSON payloads */
+/* MOCK DATA  –  Fallback when backend is unreachable */
 const MockData = (() => {
 
-    /** All orders the client can see */
     const orders = [
-        { id: "SL-1001", customer: "Nimal Perera",    address: "42 Galle Rd, Colombo 03",    contact: "077-1234567", priority: "Normal", status: "Delivered",   driver: "Kasun Silva",    updated: "2026-02-24 08:22" },
-        { id: "SL-1002", customer: "Amaya Fernando",  address: "15 Kandy Rd, Peradeniya",    contact: "071-9876543", priority: "High",   status: "In Transit",  driver: "Ruwan Dias",     updated: "2026-02-24 09:10" },
-        { id: "SL-1003", customer: "Saman Jayawardena", address: "8 Beach Rd, Galle",         contact: "076-5551234", priority: "Normal", status: "Processing",  driver: "Pending",        updated: "2026-02-24 09:45" },
-        { id: "SL-1004", customer: "Dilini Rathnayake", address: "99 Temple Rd, Kandy",       contact: "078-4443322", priority: "High",   status: "Pending",     driver: "Unassigned",     updated: "2026-02-24 10:00" },
-        { id: "SL-1005", customer: "Chamara Bandara",   address: "23 Lake Dr, Nuwara Eliya",  contact: "070-6667788", priority: "Normal", status: "Failed",      driver: "Kasun Silva",    updated: "2026-02-24 07:30" },
-        { id: "SL-1006", customer: "Tharushi de Silva",  address: "5 Main St, Matara",         contact: "075-1112233", priority: "Normal", status: "In Transit",  driver: "Ruwan Dias",     updated: "2026-02-24 10:15" },
+        { id: "SL-1001", customer: "Nimal Perera", address: "42 Galle Rd, Colombo 03", contact: "077-1234567", priority: "Normal", status: "Delivered", driver: "Kasun Silva", updated: "2026-02-24 08:22" },
+        { id: "SL-1002", customer: "Amaya Fernando", address: "15 Kandy Rd, Peradeniya", contact: "071-9876543", priority: "High", status: "In Transit", driver: "Ruwan Dias", updated: "2026-02-24 09:10" },
+        { id: "SL-1003", customer: "Saman Jayawardena", address: "8 Beach Rd, Galle", contact: "076-5551234", priority: "Normal", status: "Processing", driver: "Pending", updated: "2026-02-24 09:45" },
+        { id: "SL-1004", customer: "Dilini Rathnayake", address: "99 Temple Rd, Kandy", contact: "078-4443322", priority: "High", status: "Pending", driver: "Unassigned", updated: "2026-02-24 10:00" },
+        { id: "SL-1005", customer: "Chamara Bandara", address: "23 Lake Dr, Nuwara Eliya", contact: "070-6667788", priority: "Normal", status: "Failed", driver: "Kasun Silva", updated: "2026-02-24 07:30" },
     ];
 
-    /** Driver manifest (daily delivery list for Kasun Silva) */
     const manifest = [
         { id: "SL-1001", address: "42 Galle Rd, Colombo 03", customer: "Nimal Perera", contact: "077-1234567", priority: "Normal", status: "Delivered", eta: "08:30", notes: "" },
-        { id: "SL-1002", address: "15 Kandy Rd, Peradeniya",  customer: "Amaya Fernando", contact: "071-9876543", priority: "High",   status: "In Transit", eta: "10:00", notes: "Fragile – handle with care" },
-        { id: "SL-1005", address: "23 Lake Dr, Nuwara Eliya",  customer: "Chamara Bandara", contact: "070-6667788", priority: "Normal", status: "Failed", eta: "12:00", notes: "Customer not available" },
-        { id: "SL-1007", address: "78 Hill St, Badulla",        customer: "Iresha Kumari", contact: "072-8889900", priority: "Normal", status: "Pending", eta: "14:30", notes: "" },
-        { id: "SL-1008", address: "3 Fort Rd, Jaffna",          customer: "Pradeep Kumar", contact: "077-3334455", priority: "High",   status: "Pending", eta: "16:00", notes: "Call before delivery" },
+        { id: "SL-1002", address: "15 Kandy Rd, Peradeniya", customer: "Amaya Fernando", contact: "071-9876543", priority: "High", status: "In Transit", eta: "10:00", notes: "Fragile" },
     ];
 
-    /** Optimised route steps (from ROS) */
     const routeSteps = [
-        { seq: 1, address: "42 Galle Rd, Colombo 03",     orderId: "SL-1001", status: "completed" },
-        { seq: 2, address: "15 Kandy Rd, Peradeniya",     orderId: "SL-1002", status: "current"   },
-        { seq: 3, address: "23 Lake Dr, Nuwara Eliya",    orderId: "SL-1005", status: "upcoming"  },
-        { seq: 4, address: "78 Hill St, Badulla",          orderId: "SL-1007", status: "upcoming"  },
-        { seq: 5, address: "3 Fort Rd, Jaffna",            orderId: "SL-1008", status: "upcoming"  },
+        { seq: 1, address: "42 Galle Rd, Colombo 03", orderId: "SL-1001", status: "completed" },
+        { seq: 2, address: "15 Kandy Rd, Peradeniya", orderId: "SL-1002", status: "current" },
     ];
 
-    /** Tracking timeline for a single order */
     const trackingTimeline = [
-        { step: "Order Created",               time: "2026-02-24 08:00", done: true  },
-        { step: "Sent to Warehouse (WMS/TCP)", time: "2026-02-24 08:05", done: true  },
-        { step: "Warehouse Confirmed (CMS/SOAP)", time: "2026-02-24 08:12", done: true  },
-        { step: "Route Optimised (ROS/REST)",  time: "2026-02-24 08:18", done: true  },
-        { step: "Driver Assigned",             time: "2026-02-24 08:20", done: true  },
-        { step: "Out for Delivery",            time: "2026-02-24 08:22", done: true  },
-        { step: "In Transit",                  time: "2026-02-24 09:10", done: false, current: true },
-        { step: "Delivered",                   time: "",                 done: false  },
+        { step: "Order Received", time: "2026-02-24 08:00", done: true },
+        { step: "Sent to CMS (SOAP/XML)", time: "2026-02-24 08:05", done: true },
+        { step: "Registered in WMS (TCP)", time: "2026-02-24 08:12", done: true },
+        { step: "Route Optimised (ROS/REST)", time: "2026-02-24 08:18", done: true },
+        { step: "Out for Delivery", time: "2026-02-24 08:22", done: true },
+        { step: "In Transit", time: "2026-02-24 09:10", done: false, current: true },
+        { step: "Delivered", time: "", done: false },
     ];
 
-    /** Failure reasons dropdown */
-    const failReasons = [
-        "Customer not available",
-        "Wrong address",
-        "Package damaged",
-        "Customer refused delivery",
-        "Access restricted",
-        "Other",
-    ];
-
-    /** Simulated real-time events (for demo button) */
     const realtimeEvents = [
-        { orderId: "SL-1003", newStatus: "In Transit",  driver: "Nuwan Bandara", message: "Order SL-1003 is now In Transit!" },
-        { orderId: "SL-1004", newStatus: "Processing",  driver: "Kasun Silva",   message: "Order SL-1004 picked up by warehouse." },
-        { orderId: "SL-1002", newStatus: "Delivered",    driver: "Ruwan Dias",    message: "Order SL-1002 has been delivered!" },
-        { orderId: "SL-1006", newStatus: "Delivered",    driver: "Ruwan Dias",    message: "Order SL-1006 delivered successfully." },
+        { orderId: "SL-1003", newStatus: "In Transit", driver: "Nuwan Bandara", message: "Order SL-1003 is now In Transit!" },
+        { orderId: "SL-1002", newStatus: "Delivered", driver: "Ruwan Dias", message: "Order SL-1002 has been delivered!" },
     ];
 
     let _eventIdx = 0;
@@ -70,20 +45,15 @@ const MockData = (() => {
         return { ...evt, timestamp: new Date().toLocaleString() };
     };
 
-    return { orders, manifest, routeSteps, trackingTimeline, failReasons, nextEvent };
+    return { orders, manifest, routeSteps, trackingTimeline, nextEvent };
 })();
 
 
 /*  API SERVICE  –  fetch()-based REST communication */
 const ApiService = (() => {
 
-    const BASE = ""; // Will resolve to same origin (e.g. http://localhost:8080)
+    const BASE = "";
 
-    /**
-     * Generic request wrapper with spinner and error handling.
-     * In production this calls the real backend; here it falls
-     * back to MockData when the server is unreachable.
-     */
     const request = async (method, path, body = null) => {
         const opts = {
             method,
@@ -98,86 +68,99 @@ const ApiService = (() => {
             return await res.json();
         } catch (err) {
             console.warn(`[ApiService] ${method} ${path} failed – using mock data.`, err.message);
-            return null; // caller uses mock fallback
+            return null;
         } finally {
             SpinnerCtrl.hide();
         }
     };
 
     /* ---- Client endpoints ---- */
-    const getOrders = ()         => request("GET", "/api/orders");
-    const submitOrder = (data)   => request("POST", "/api/orders", data);
-    const trackOrder = (id)      => request("GET", `/api/orders/${id}/track`);
+    const getOrders = () => request("GET", "/api/orders");
+    const submitOrder = (data) => request("POST", "/api/orders", data);
+    const trackOrder = (id) => request("GET", `/api/orders/${id}/track`);
 
-    /* ---- Driver endpoints ---- */
-    const getManifest = ()       => request("GET", "/api/driver/manifest");
-    const getRoute = ()          => request("GET", "/api/driver/route");
+    /* ---- Driver endpoints (pass driverId for filtering) ---- */
+    const _getDriverId = () => {
+        try {
+            const user = JSON.parse(sessionStorage.getItem('st_user') || '{}');
+            return user.driverId || '';
+        } catch { return ''; }
+    };
+    const getManifest = () => request("GET", `/api/driver/manifest?driverId=${encodeURIComponent(_getDriverId())}`);
+    const getRoute = () => request("GET", `/api/driver/route?driverId=${encodeURIComponent(_getDriverId())}`);
     const updateDelivery = (id, payload) => request("PUT", `/api/driver/deliveries/${id}`, payload);
 
     return { getOrders, submitOrder, trackOrder, getManifest, getRoute, updateDelivery };
 })();
 
 
-/*  WEBSOCKET SERVICE  –  Real-time update handler (mock) */
+/*  WEBSOCKET SERVICE  –  STOMP over SockJS for real-time updates */
 const WsService = (() => {
 
-    let ws = null;
+    let stompClient = null;
     let listeners = [];
     let connected = false;
 
-    /**
-     * Attempts to open a WebSocket to the backend.
-     * If the server is offline, we fall back to a mock
-     * interval-based "push" for demonstration purposes.
-     */
     const connect = () => {
         try {
-            ws = new WebSocket("ws://localhost:8080/ws");
+            // Use SockJS + STOMP for WebSocket (matches Spring's WebSocketConfig)
+            if (typeof SockJS === 'undefined' || typeof Stomp === 'undefined') {
+                console.warn("[WsService] SockJS/STOMP libraries not loaded – mock mode.");
+                return;
+            }
 
-            ws.onopen = () => {
+            const socket = new SockJS('/ws');
+            stompClient = Stomp.over(socket);
+            stompClient.debug = null; // Suppress STOMP debug logs
+
+            stompClient.connect({}, function (frame) {
                 connected = true;
-                console.log("[WsService] Connected to ws://localhost:8080/ws");
+                console.log("[WsService] Connected via STOMP/SockJS");
                 ToastManager.info("Real-time connection established.");
-            };
+                _updateBadge(true);
 
-            ws.onmessage = (event) => {
-                try {
-                    const data = JSON.parse(event.data);
-                    _dispatch(data);
-                } catch { /* ignore non-JSON frames */ }
-            };
-
-            ws.onerror = () => {
-                console.warn("[WsService] WebSocket error – falling back to mock mode.");
+                // Subscribe to order updates
+                stompClient.subscribe('/topic/orders', function (message) {
+                    try {
+                        const order = JSON.parse(message.body);
+                        _dispatch(order);
+                    } catch (e) {
+                        console.warn("[WsService] Failed to parse message:", e);
+                    }
+                });
+            }, function (error) {
                 connected = false;
-            };
+                console.warn("[WsService] STOMP connection error:", error);
+                _updateBadge(false);
+            });
 
-            ws.onclose = () => {
-                connected = false;
-                console.log("[WsService] Disconnected.");
-            };
-
-        } catch {
-            console.warn("[WsService] WebSocket not available – mock mode active.");
+        } catch (e) {
+            console.warn("[WsService] WebSocket not available – mock mode.", e);
         }
     };
 
-    /** Register a callback for incoming events */
     const onEvent = (fn) => listeners.push(fn);
 
-    /** Dispatch event to all listeners */
     const _dispatch = (data) => {
         listeners.forEach(fn => fn(data));
     };
 
-    /**
-     * Simulate an incoming real-time event
-     * (used by the "Trigger Event" demo button)
-     */
     const simulateEvent = () => {
         const evt = MockData.nextEvent();
         _dispatch(evt);
         return evt;
+    };
+
+    const _updateBadge = (isConnected) => {
+        const badge = document.getElementById('ws-status-badge');
+        if (!badge) return;
+        if (isConnected) {
+            badge.textContent = 'Connected';
+            badge.className = 'badge badge-delivered';
+        } else {
+            badge.textContent = 'Disconnected';
+            badge.className = 'badge badge-failed';
+        }
     };
 
     return { connect, onEvent, simulateEvent, isConnected: () => connected };
@@ -214,9 +197,9 @@ const ToastManager = (() => {
     };
 
     return {
-        info:    (m, d) => _show(m, "info", d),
+        info: (m, d) => _show(m, "info", d),
         success: (m, d) => _show(m, "success", d),
-        error:   (m, d) => _show(m, "error", d),
+        error: (m, d) => _show(m, "error", d),
         warning: (m, d) => _show(m, "warning", d),
     };
 })();
@@ -248,7 +231,7 @@ const SpinnerCtrl = (() => {
 /* CLIENT APP  –  Dashboard, orders, submission, tracking */
 const ClientApp = (() => {
 
-    let orders = [...MockData.orders];
+    let orders = [...MockData.orders]; // Start with mock, replaced by real data
 
     /* ---- Navigation ---- */
     const initNav = () => {
@@ -257,16 +240,13 @@ const ClientApp = (() => {
                 e.preventDefault();
                 const target = link.dataset.view;
                 switchView(target);
-                // Update active state
                 document.querySelectorAll(".sidebar-nav a").forEach(a => a.classList.remove("active"));
                 link.classList.add("active");
-                // Close mobile sidebar
                 document.querySelector(".sidebar")?.classList.remove("open");
                 document.querySelector(".sidebar-overlay")?.classList.remove("show");
             });
         });
 
-        // Mobile menu toggle
         const toggle = document.querySelector(".menu-toggle");
         if (toggle) {
             toggle.addEventListener("click", () => {
@@ -275,7 +255,6 @@ const ClientApp = (() => {
             });
         }
 
-        // Overlay click closes sidebar
         const overlay = document.querySelector(".sidebar-overlay");
         if (overlay) {
             overlay.addEventListener("click", () => {
@@ -289,7 +268,6 @@ const ClientApp = (() => {
         document.querySelectorAll(".view-section").forEach(s => s.classList.remove("active"));
         const target = document.getElementById(viewId);
         if (target) target.classList.add("active");
-        // Update topbar title
         const titles = {
             "view-dashboard": "Dashboard",
             "view-orders": "My Orders",
@@ -321,17 +299,16 @@ const ClientApp = (() => {
                 <tr>
                     <td><strong>${o.id}</strong></td>
                     <td>${o.customer}</td>
-                    <td>${o.address}</td>
-                    <td>${o.contact}</td>
+                    <td>${o.address || '—'}</td>
+                    <td>${o.contact || '—'}</td>
                     <td><span class="badge badge-${_badgeClass(o.status)}">${o.status}</span></td>
                     <td>${o.priority === "High" ? '<span class="badge badge-failed">High</span>' : 'Normal'}</td>
-                    <td>${o.driver}</td>
-                    <td>${o.updated}</td>
+                    <td>${o.driver || 'Unassigned'}</td>
+                    <td>${o.updated || '—'}</td>
                 </tr>
             `).join("");
         }
 
-        // Dashboard compact table (fewer columns)
         const dashTbody = document.getElementById("dashboard-orders-tbody");
         if (dashTbody) {
             dashTbody.innerHTML = orders.slice(0, 5).map(o => `
@@ -339,8 +316,8 @@ const ClientApp = (() => {
                     <td><strong>${o.id}</strong></td>
                     <td>${o.customer}</td>
                     <td><span class="badge badge-${_badgeClass(o.status)}">${o.status}</span></td>
-                    <td>${o.driver}</td>
-                    <td>${o.updated}</td>
+                    <td>${o.driver || 'Unassigned'}</td>
+                    <td>${o.updated || '—'}</td>
                 </tr>
             `).join("");
         }
@@ -356,8 +333,10 @@ const ClientApp = (() => {
 
             const data = {
                 customer: document.getElementById("inp-name").value.trim(),
-                address:  document.getElementById("inp-address").value.trim(),
-                contact:  document.getElementById("inp-contact").value.trim(),
+                pickupAddress: document.getElementById("inp-pickup")?.value.trim() || "SwiftLogistics Warehouse",
+                address: document.getElementById("inp-address").value.trim(),
+                packageDetails: document.getElementById("inp-package")?.value.trim() || "",
+                contact: document.getElementById("inp-contact").value.trim(),
                 priority: document.getElementById("inp-priority").value,
             };
 
@@ -366,30 +345,42 @@ const ClientApp = (() => {
                 return;
             }
 
-            // Attempt real API call first
+            // Call real backend API
             SpinnerCtrl.show();
             const result = await ApiService.submitOrder(data);
+            SpinnerCtrl.hide();
 
-            // Build order object (mock)
-            const newOrder = {
-                id: `SL-${1009 + orders.length}`,
-                ...data,
-                status: "Pending",
-                driver: "Unassigned",
-                updated: new Date().toLocaleString(),
-            };
+            if (result && result.displayId) {
+                // Order created successfully via backend
+                const newOrder = {
+                    id: result.displayId,
+                    ...data,
+                    status: "Pending",
+                    driver: "Unassigned",
+                    updated: new Date().toLocaleString(),
+                };
+                orders.unshift(newOrder);
+                ToastManager.success(`Order ${result.displayId} submitted successfully! Saga processing started.`);
+            } else {
+                // Fallback to mock
+                const newOrder = {
+                    id: `SL-${1009 + orders.length}`,
+                    ...data,
+                    status: "Pending",
+                    driver: "Unassigned",
+                    updated: new Date().toLocaleString(),
+                };
+                orders.unshift(newOrder);
+                ToastManager.success(`Order ${newOrder.id} submitted (mock mode).`);
+            }
 
-            orders.unshift(newOrder);
             updateStats();
             renderOrders();
             form.reset();
-            SpinnerCtrl.hide();
-
-            ToastManager.success(`Order ${newOrder.id} submitted successfully!`);
         });
     };
 
-    /* ---- Tracking (inline in client dashboard) ---- */
+    /* ---- Tracking ---- */
     const initTracking = () => {
         const btn = document.getElementById("btn-track");
         if (!btn) return;
@@ -398,28 +389,55 @@ const ClientApp = (() => {
             const id = document.getElementById("inp-trackId").value.trim();
             if (!id) { ToastManager.warning("Enter an Order ID."); return; }
 
+            // Try to find by display ID in loaded orders, or look up UUID
+            const order = orders.find(o => o.id === id);
+            let uuid = order ? order.uuid : id;
+
             SpinnerCtrl.show();
-            const result = await ApiService.trackOrder(id);
+            const result = await ApiService.trackOrder(uuid);
             SpinnerCtrl.hide();
 
-            // Use mock timeline
-            const timeline = MockData.trackingTimeline;
             const container = document.getElementById("tracking-result");
             if (!container) return;
 
-            container.innerHTML = `
-                <h4 style="margin-bottom:1rem;">Tracking: ${id}</h4>
-                <div class="tracking-timeline">
-                    ${timeline.map(t => `
-                        <div class="timeline-item ${t.done ? 'done' : ''} ${t.current ? 'current' : ''}">
-                            <h4>${t.step}</h4>
-                            <p>${t.time || '—'}</p>
+            if (result && result.timeline) {
+                // Real tracking data from backend
+                const o = result.order;
+                container.innerHTML = `
+                    <h4 style="margin-bottom:1rem;">Tracking: ${o.id}</h4>
+                    <div class="card mb-2">
+                        <div class="card-body">
+                            <p><strong>Customer:</strong> ${o.customer}</p>
+                            <p><strong>Address:</strong> ${o.address}</p>
+                            <p><strong>Status:</strong> <span class="badge badge-${_badgeClass(o.status)}">${o.status}</span></p>
+                            <p><strong>Driver:</strong> ${o.driver}</p>
                         </div>
-                    `).join("")}
-                </div>
-            `;
+                    </div>
+                    <div class="tracking-timeline">
+                        ${result.timeline.map(t => `
+                            <div class="timeline-item ${t.done ? 'done' : ''} ${t.current ? 'current' : ''}">
+                                <h4>${t.step}</h4>
+                                <p>${t.time || '—'}</p>
+                            </div>
+                        `).join("")}
+                    </div>
+                `;
+            } else {
+                // Fallback to mock timeline
+                const timeline = MockData.trackingTimeline;
+                container.innerHTML = `
+                    <h4 style="margin-bottom:1rem;">Tracking: ${id}</h4>
+                    <div class="tracking-timeline">
+                        ${timeline.map(t => `
+                            <div class="timeline-item ${t.done ? 'done' : ''} ${t.current ? 'current' : ''}">
+                                <h4>${t.step}</h4>
+                                <p>${t.time || '—'}</p>
+                            </div>
+                        `).join("")}
+                    </div>
+                `;
+            }
 
-            // Also show map placeholder
             const mapEl = document.getElementById("tracking-map");
             if (mapEl) {
                 mapEl.innerHTML = `
@@ -435,16 +453,43 @@ const ClientApp = (() => {
 
     /* ---- WebSocket event handler ---- */
     const handleWsEvent = (evt) => {
-        // Update order in list
-        const idx = orders.findIndex(o => o.id === evt.orderId);
-        if (idx >= 0) {
-            orders[idx].status = evt.newStatus;
-            orders[idx].driver = evt.driver || orders[idx].driver;
-            orders[idx].updated = evt.timestamp || new Date().toLocaleString();
+        // Handle backend Order entity (from STOMP) or mock event
+        if (evt.displayId || evt.id) {
+            // Backend order entity via STOMP
+            const displayId = evt.displayId || evt.id;
+            const status = _mapBackendStatus(evt.status);
+            const idx = orders.findIndex(o => o.id === displayId);
+            if (idx >= 0) {
+                orders[idx].status = status;
+                orders[idx].driver = evt.driverId || orders[idx].driver;
+                orders[idx].updated = new Date().toLocaleString();
+            }
+            ToastManager.info(`🔔 Order ${displayId} is now ${status}`);
+        } else if (evt.orderId) {
+            // Mock event format
+            const idx = orders.findIndex(o => o.id === evt.orderId);
+            if (idx >= 0) {
+                orders[idx].status = evt.newStatus;
+                orders[idx].driver = evt.driver || orders[idx].driver;
+                orders[idx].updated = evt.timestamp || new Date().toLocaleString();
+            }
+            ToastManager.info(`🔔 ${evt.message}`);
         }
         updateStats();
         renderOrders();
-        ToastManager.info(`🔔 ${evt.message}`);
+    };
+
+    /* ---- Load real data from backend ---- */
+    const loadOrders = async () => {
+        const fresh = await ApiService.getOrders();
+        if (fresh && Array.isArray(fresh) && fresh.length > 0) {
+            orders = fresh;
+            console.log("[ClientApp] Loaded", orders.length, "orders from backend.");
+        } else {
+            console.log("[ClientApp] Using mock data (backend returned empty or failed).");
+        }
+        updateStats();
+        renderOrders();
     };
 
     /* ---- Initialise ---- */
@@ -455,19 +500,15 @@ const ClientApp = (() => {
         initOrderForm();
         initTracking();
 
+        // Load real data from backend
+        loadOrders();
+
         // Listen for real-time updates
         WsService.onEvent(handleWsEvent);
         WsService.connect();
 
-        // Auto-refresh orders via REST every 30s (async polling fallback)
-        setInterval(async () => {
-            const fresh = await ApiService.getOrders();
-            if (fresh && Array.isArray(fresh)) {
-                orders = fresh;
-                updateStats();
-                renderOrders();
-            }
-        }, 30000);
+        // Auto-refresh orders every 15s
+        setInterval(loadOrders, 15000);
     };
 
     /* ---- Helpers ---- */
@@ -481,6 +522,17 @@ const ClientApp = (() => {
         return map[status] || "pending";
     };
 
+    const _mapBackendStatus = (s) => {
+        if (!s) return "Pending";
+        const map = {
+            "RECEIVED": "Pending", "CMS_CREATED": "Processing", "WMS_REGISTERED": "Processing",
+            "ROUTE_PLANNED": "Processing", "READY_FOR_PICKUP": "Ready for Pickup",
+            "PICKED_UP": "In Transit",
+            "DELIVERED": "Delivered", "FAILED": "Failed"
+        };
+        return map[s] || s;
+    };
+
     return { init };
 })();
 
@@ -490,7 +542,7 @@ const DriverApp = (() => {
 
     let manifest = [...MockData.manifest];
 
-    /* ---- Tab Navigation (sidebar layout – unified selectors) ---- */
+    /* ---- Tab Navigation ---- */
     const initTabs = () => {
         document.querySelectorAll(".sidebar-nav a[data-view]").forEach(link => {
             link.addEventListener("click", (e) => {
@@ -501,17 +553,14 @@ const DriverApp = (() => {
                 document.querySelectorAll(".view-section").forEach(v => v.classList.remove("active"));
                 const el = document.getElementById(target);
                 if (el) el.classList.add("active");
-                // Update topbar title
                 const titles = { "drv-deliveries": "Deliveries", "drv-route": "Optimised Route", "drv-pod": "Proof of Delivery" };
                 const tb = document.querySelector(".topbar-title");
                 if (tb) tb.textContent = titles[target] || "Driver Dashboard";
-                // Close mobile sidebar
                 document.querySelector(".sidebar")?.classList.remove("open");
                 document.querySelector(".sidebar-overlay")?.classList.remove("show");
             });
         });
 
-        // Mobile menu toggle
         const toggle = document.querySelector(".menu-toggle");
         if (toggle) {
             toggle.addEventListener("click", () => {
@@ -520,7 +569,6 @@ const DriverApp = (() => {
             });
         }
 
-        // Overlay click closes sidebar
         const overlay = document.querySelector(".sidebar-overlay");
         if (overlay) {
             overlay.addEventListener("click", () => {
@@ -535,37 +583,65 @@ const DriverApp = (() => {
         const container = document.getElementById("manifest-list");
         if (!container) return;
 
-        container.innerHTML = manifest.map((d, i) => `
+        if (manifest.length === 0) {
+            container.innerHTML = '<div class="card"><div class="card-body text-center">No deliveries assigned yet. Orders will appear here once they are processed through the saga.</div></div>';
+            return;
+        }
+
+        container.innerHTML = manifest.map((d) => `
             <div class="delivery-card ${d.priority === 'High' ? 'urgent' : ''}" id="dcard-${d.id}">
                 <div class="delivery-header">
                     <h4>${d.id} – ${d.customer}</h4>
                     <span class="badge badge-${_badgeClass(d.status)}">${d.status}</span>
                 </div>
                 <div class="delivery-meta">
-                    📍 ${d.address}<br>
-                    📞 ${d.contact} &nbsp;|&nbsp; ⏰ ETA: ${d.eta}
+                    📦 Pickup: ${d.pickupAddress || 'Warehouse'}<br>
+                    📍 Deliver: ${d.address}<br>
+                    📞 ${d.contact || '—'} &nbsp;|&nbsp; ⏰ ETA: ${d.eta || '—'}
                     ${d.notes ? `<br>📝 ${d.notes}` : ''}
                 </div>
                 <div class="delivery-actions">
-                    ${d.status !== 'Delivered' && d.status !== 'Failed' ? `
-                        <button class="btn btn-success btn-sm" onclick="DriverApp.markDelivered('${d.id}')">✔ Delivered</button>
+                    ${d.rawStatus === 'READY_FOR_PICKUP' ? `
+                        <button class="btn btn-primary btn-sm" onclick="DriverApp.markPickedUp('${d.id}')">📦 Collect from Warehouse</button>
                         <button class="btn btn-danger btn-sm" onclick="DriverApp.openFailModal('${d.id}')">✘ Failed</button>
                     ` : ''}
-                    ${d.status === 'Delivered' ? '<span style="color:var(--success);font-weight:600;font-size:.85rem;">✔ Completed</span>' : ''}
-                    ${d.status === 'Failed' ? '<span style="color:var(--danger);font-weight:600;font-size:.85rem;">✘ Failed</span>' : ''}
+                    ${d.rawStatus === 'PICKED_UP' ? `
+                        <button class="btn btn-success btn-sm" onclick="DriverApp.markDelivered('${d.id}')">✔ Mark Delivered</button>
+                        <button class="btn btn-danger btn-sm" onclick="DriverApp.openFailModal('${d.id}')">✘ Failed</button>
+                    ` : ''}
+                    ${d.status === 'Delivered' ? '<span style="color:var(--success-color);font-weight:600;font-size:.85rem;">✔ Delivered</span>' : ''}
+                    ${d.status === 'Failed' ? '<span style="color:var(--error-color);font-weight:600;font-size:.85rem;">✘ Failed</span>' : ''}
                 </div>
             </div>
         `).join("");
     };
 
-    /* ---- Mark Delivered ---- */
-    const markDelivered = async (id) => {
+    /* ---- Mark Picked Up (collected from warehouse) ---- */
+    const markPickedUp = async (id) => {
         SpinnerCtrl.show();
-        await ApiService.updateDelivery(id, { status: "Delivered" });
+        await ApiService.updateDelivery(id, { status: "PickedUp" });
         SpinnerCtrl.hide();
 
         const idx = manifest.findIndex(d => d.id === id);
-        if (idx >= 0) manifest[idx].status = "Delivered";
+        if (idx >= 0) {
+            manifest[idx].status = "Picked Up";
+            manifest[idx].rawStatus = "PICKED_UP";
+        }
+        renderManifest();
+        ToastManager.info(`${id} picked up from warehouse!`);
+    };
+
+    /* ---- Mark Delivered ---- */
+    const markDelivered = async (id) => {
+        SpinnerCtrl.show();
+        const result = await ApiService.updateDelivery(id, { status: "Delivered" });
+        SpinnerCtrl.hide();
+
+        const idx = manifest.findIndex(d => d.id === id);
+        if (idx >= 0) {
+            manifest[idx].status = "Delivered";
+            manifest[idx].rawStatus = "DELIVERED";
+        }
         renderManifest();
         ToastManager.success(`${id} marked as Delivered!`);
     };
@@ -604,11 +680,13 @@ const DriverApp = (() => {
     };
 
     /* ---- Render Route ---- */
+    let routeSteps = [...MockData.routeSteps];
+
     const renderRoute = () => {
         const container = document.getElementById("route-list");
         if (!container) return;
 
-        container.innerHTML = MockData.routeSteps.map(s => `
+        container.innerHTML = routeSteps.map(s => `
             <div class="route-step">
                 <div class="route-dot ${s.status === 'completed' ? 'completed' : ''} ${s.status === 'current' ? 'current' : ''}"></div>
                 <div class="route-step-info">
@@ -616,7 +694,7 @@ const DriverApp = (() => {
                     <p>${s.address}</p>
                 </div>
             </div>
-        `).join("");
+            `).join("");
     };
 
     /* ---- Signature Pad ---- */
@@ -626,7 +704,6 @@ const DriverApp = (() => {
         sigCanvas = document.getElementById("sig-canvas");
         if (!sigCanvas) return;
 
-        // Set actual pixel dimensions
         const rect = sigCanvas.parentElement.getBoundingClientRect();
         sigCanvas.width = rect.width;
         sigCanvas.height = 160;
@@ -643,8 +720,8 @@ const DriverApp = (() => {
         };
 
         const start = (e) => { sigDrawing = true; const p = getPos(e); sigCtx.beginPath(); sigCtx.moveTo(p.x, p.y); };
-        const draw  = (e) => { if (!sigDrawing) return; e.preventDefault(); const p = getPos(e); sigCtx.lineTo(p.x, p.y); sigCtx.stroke(); };
-        const stop  = ()  => { sigDrawing = false; };
+        const draw = (e) => { if (!sigDrawing) return; e.preventDefault(); const p = getPos(e); sigCtx.lineTo(p.x, p.y); sigCtx.stroke(); };
+        const stop = () => { sigDrawing = false; };
 
         sigCanvas.addEventListener("mousedown", start);
         sigCanvas.addEventListener("mousemove", draw);
@@ -686,9 +763,32 @@ const DriverApp = (() => {
         setTimeout(() => banner.classList.remove("show"), 4000);
     };
 
-    /* ---- WebSocket handler (driver) ---- */
+    /* ---- WebSocket handler ---- */
     const handleWsEvent = (evt) => {
-        showNotification(`🔔 ${evt.message}`);
+        const displayId = evt.displayId || evt.orderId;
+        const message = evt.message || `Order ${displayId} updated`;
+        showNotification(`🔔 ${message}`);
+        // Refresh manifest from backend
+        loadManifest();
+    };
+
+    /* ---- Load real data from backend ---- */
+    const loadManifest = async () => {
+        const data = await ApiService.getManifest();
+        if (data && Array.isArray(data) && data.length > 0) {
+            manifest = data;
+            console.log("[DriverApp] Loaded", manifest.length, "deliveries from backend.");
+        }
+        renderManifest();
+    };
+
+    const loadRoute = async () => {
+        const data = await ApiService.getRoute();
+        if (data && Array.isArray(data) && data.length > 0) {
+            routeSteps = data;
+            console.log("[DriverApp] Loaded", routeSteps.length, "route steps from backend.");
+        }
+        renderRoute();
     };
 
     /* ---- Init ---- */
@@ -709,18 +809,25 @@ const DriverApp = (() => {
         const btnClearSig = document.getElementById("btn-clear-sig");
         if (btnClearSig) btnClearSig.addEventListener("click", clearSignature);
 
+        // Load real data from backend
+        loadManifest();
+        loadRoute();
+
         // WebSocket
         WsService.onEvent(handleWsEvent);
         WsService.connect();
+
+        // Auto-refresh every 10s
+        setInterval(() => { loadManifest(); loadRoute(); }, 10000);
     };
 
     /* ---- Helper ---- */
     const _badgeClass = (status) => {
-        const map = { "Pending": "pending", "Processing": "processing", "In Transit": "intransit", "Delivered": "delivered", "Failed": "failed" };
+        const map = { "Pending": "pending", "Processing": "processing", "Ready for Pickup": "processing", "Picked Up": "intransit", "In Transit": "intransit", "Delivered": "delivered", "Failed": "failed" };
         return map[status] || "pending";
     };
 
-    return { init, markDelivered, openFailModal, closeFailModal, confirmFail, clearSignature };
+    return { init, markPickedUp, markDelivered, openFailModal, closeFailModal, confirmFail, clearSignature };
 })();
 
 
@@ -736,54 +843,65 @@ const TrackApp = (() => {
             if (!id) { ToastManager.warning("Enter an Order ID."); return; }
 
             SpinnerCtrl.show();
-            await ApiService.trackOrder(id);
+            const result = await ApiService.trackOrder(id);
             SpinnerCtrl.hide();
 
-            const timeline = MockData.trackingTimeline;
             const container = document.getElementById("track-result");
             if (!container) return;
 
-            // Find matching order for details
-            const order = MockData.orders.find(o => o.id === id) || {
-                id, customer: "—", address: "—", status: "Unknown", driver: "—"
-            };
+            if (result && result.timeline) {
+                const order = result.order;
+                container.innerHTML = `
+            <div class="card mb-2">
+                <div class="card-header"><h3>Order ${order.id}</h3></div>
+                <div class="card-body">
+                    <p><strong>Customer:</strong> ${order.customer}</p>
+                    <p><strong>Address:</strong> ${order.address}</p>
+                    <p><strong>Status:</strong> <span class="badge badge-${_badgeClass(order.status)}">${order.status}</span></p>
+                    <p><strong>Driver:</strong> ${order.driver}</p>
+                </div>
+            </div>
 
-            container.innerHTML = `
-                <div class="card mb-2">
-                    <div class="card-header"><h3>Order ${order.id}</h3></div>
-                    <div class="card-body">
-                        <p><strong>Customer:</strong> ${order.customer}</p>
-                        <p><strong>Address:</strong> ${order.address}</p>
-                        <p><strong>Status:</strong> <span class="badge badge-${_badgeClass(order.status)}">${order.status}</span></p>
-                        <p><strong>Driver:</strong> ${order.driver}</p>
+            <div class="card mb-2">
+                <div class="card-header"><h3>Tracking Timeline</h3></div>
+                <div class="card-body">
+                    <div class="tracking-timeline">
+                        ${result.timeline.map(t => `
+                                    <div class="timeline-item ${t.done ? 'done' : ''} ${t.current ? 'current' : ''}">
+                                        <h4>${t.step}</h4>
+                                        <p>${t.time || '—'}</p>
+                                    </div>
+                                `).join("")}
                     </div>
                 </div>
+            </div>
 
-                <div class="card mb-2">
-                    <div class="card-header"><h3>Tracking Timeline</h3></div>
-                    <div class="card-body">
-                        <div class="tracking-timeline">
-                            ${timeline.map(t => `
-                                <div class="timeline-item ${t.done ? 'done' : ''} ${t.current ? 'current' : ''}">
-                                    <h4>${t.step}</h4>
-                                    <p>${t.time || '—'}</p>
-                                </div>
-                            `).join("")}
-                        </div>
+            <div class="card">
+                <div class="card-header"><h3>Live Map</h3></div>
+                <div class="card-body">
+                    <div class="map-placeholder">
+                        <span class="map-icon">🗺️</span>
+                        <span>Live Tracking Map – ${order.id}</span>
+                        <small class="text-dim" style="margin-top:.3rem;">Map integration point (Google Maps / Leaflet)</small>
                     </div>
                 </div>
-
-                <div class="card">
-                    <div class="card-header"><h3>Live Map</h3></div>
-                    <div class="card-body">
-                        <div class="map-placeholder">
-                            <span class="map-icon">🗺️</span>
-                            <span>Live Tracking Map – ${order.id}</span>
-                            <small class="text-dim" style="margin-top:.3rem;">Map integration point (Google Maps / Leaflet)</small>
-                        </div>
-                    </div>
-                </div>
+            </div>
             `;
+            } else {
+                // Fallback mock
+                const timeline = MockData.trackingTimeline;
+                container.innerHTML = `
+            <h4 style="margin-bottom:1rem;">Tracking: ${id} (mock mode)</h4>
+            <div class="tracking-timeline">
+                ${timeline.map(t => `
+                            <div class="timeline-item ${t.done ? 'done' : ''} ${t.current ? 'current' : ''}">
+                                <h4>${t.step}</h4>
+                                <p>${t.time || '—'}</p>
+                            </div>
+                        `).join("")}
+            </div>
+            `;
+            }
         });
     };
 
@@ -815,7 +933,6 @@ const DemoToolbar = (() => {
 
 /* BOOTSTRAP  –  Page-level initialisation */
 document.addEventListener("DOMContentLoaded", () => {
-    // Detect which page we're on
     const page = document.body.dataset.page;
 
     if (page === "client") {
@@ -826,6 +943,5 @@ document.addEventListener("DOMContentLoaded", () => {
         TrackApp.init();
     }
 
-    // Demo toolbar (present on all app pages)
     DemoToolbar.init();
 });

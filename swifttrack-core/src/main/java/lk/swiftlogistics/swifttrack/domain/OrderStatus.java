@@ -5,7 +5,8 @@ public enum OrderStatus {
     CMS_CREATED,
     WMS_REGISTERED,
     ROUTE_PLANNED,
-    OUT_FOR_DELIVERY,
+    READY_FOR_PICKUP,
+    PICKED_UP,
     DELIVERED,
     FAILED
 }

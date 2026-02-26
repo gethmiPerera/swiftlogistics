@@ -1,183 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Driver Dashboard – SwiftTrack</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body data-page="driver">
 
-<!-- DRIVER PORTAL – Sidebar + Main Content Layout -->
-<!-- Sections: Deliveries · Route · Proof of Delivery -->
+    <!-- DRIVER PORTAL – Sidebar + Main Content Layout -->
+    <!-- Sections: Deliveries · Route · Proof of Delivery -->
 
-<!-- Notification Banner (slides down for urgent updates) -->
-<div class="notification-banner" id="notif-banner"></div>
+    <!-- Notification Banner (slides down for urgent updates) -->
+    <div class="notification-banner" id="notif-banner"></div>
 
-<!-- Mobile sidebar overlay -->
-<div class="sidebar-overlay"></div>
+    <!-- Mobile sidebar overlay -->
+    <div class="sidebar-overlay"></div>
 
-<!-- ============ SIDEBAR ============ -->
-<aside class="sidebar">
-    <div class="sidebar-header">Swift<span>Track</span></div>
-    <nav class="sidebar-nav">
-        <a href="#" data-view="drv-deliveries" class="active">
-            <span class="nav-icon">📋</span> Deliveries
-        </a>
-        <a href="#" data-view="drv-route">
-            <span class="nav-icon">🗺️</span> Route
-        </a>
-        <a href="#" data-view="drv-pod">
-            <span class="nav-icon">📝</span> Proof of Delivery
-        </a>
-        <a href="index.html">
-            <span class="nav-icon">🏠</span> Home
-        </a>
-        <a href="driver-login.html" onclick="sessionStorage.clear()">
-            <span class="nav-icon">🚪</span> Logout
-        </a>
-    </nav>
-    <div class="sidebar-footer">SwiftLogistics &copy; 2026</div>
-</aside>
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+        <div class="sidebar-header">Swift<span>Track</span></div>
+        <nav class="sidebar-nav">
+            <a href="#" data-view="drv-deliveries" class="active">
+                <span class="nav-icon">📋</span> Deliveries
+            </a>
+            <a href="#" data-view="drv-route">
+                <span class="nav-icon">🗺️</span> Route
+            </a>
+            <a href="#" data-view="drv-pod">
+                <span class="nav-icon">📝</span> Proof of Delivery
+            </a>
+            <a href="index.html">
+                <span class="nav-icon">🏠</span> Home
+            </a>
+            <a href="driver-login.html" onclick="sessionStorage.clear()">
+                <span class="nav-icon">🚪</span> Logout
+            </a>
+        </nav>
+        <div class="sidebar-footer">SwiftLogistics &copy; 2026</div>
+    </aside>
 
-<!-- ============ MAIN CONTENT ============ -->
-<div class="main-content">
+    <!-- ============ MAIN CONTENT ============ -->
+    <div class="main-content">
 
-    <!-- Top Bar -->
-    <header class="topbar">
-        <div class="topbar-left">
-            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-            <span class="topbar-title">Driver Dashboard</span>
-        </div>
-        <div class="topbar-right">
-            <div class="user-info">
-                <span id="driver-name">Driver</span>
-                <div class="avatar" id="driver-avatar">D</div>
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+                <span class="topbar-title">Driver Dashboard</span>
             </div>
-        </div>
-    </header>
-
-    <div class="page-content">
-
-        <!-- VIEW: DELIVERIES (Daily Manifest) -->
-        <section id="drv-deliveries" class="view-section active">
-            <h3 class="mb-2">Today's Deliveries</h3>
-            <div id="manifest-list">
-                <!-- Rendered by DriverApp.renderManifest() -->
-            </div>
-        </section>
-
-        <!-- VIEW: OPTIMISED ROUTE -->
-        <section id="drv-route" class="view-section">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Optimised Route</h3>
-                    <span class="badge badge-processing">ROS / REST</span>
-                </div>
-                <div class="card-body">
-                    <div id="route-list">
-                        <!-- Rendered by DriverApp.renderRoute() -->
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="map-placeholder" style="height:180px">
-                        <span class="map-icon">🗺️</span>
-                        <span>Route Map</span>
-                        <small class="text-dim">Google Maps / Leaflet integration point</small>
-                    </div>
+            <div class="topbar-right">
+                <div class="user-info">
+                    <span id="driver-name">Driver</span>
+                    <div class="avatar" id="driver-avatar">D</div>
                 </div>
             </div>
-        </section>
+        </header>
 
-        <!-- VIEW: PROOF OF DELIVERY -->
-        <section id="drv-pod" class="view-section">
+        <div class="page-content">
 
-            <div class="max-w-form">
+            <!-- VIEW: DELIVERIES (Daily Manifest) -->
+            <section id="drv-deliveries" class="view-section active">
+                <h3 class="mb-2">My Assigned Packages</h3>
+                <div id="manifest-list">
+                    <!-- Rendered by DriverApp.renderManifest() -->
+                </div>
+            </section>
 
-                <!-- Digital Signature -->
-                <div class="card mb-2">
+            <!-- VIEW: OPTIMISED ROUTE -->
+            <section id="drv-route" class="view-section">
+                <div class="card">
                     <div class="card-header">
-                        <h3>Digital Signature</h3>
-                        <button class="btn btn-outline btn-sm" id="btn-clear-sig">Clear</button>
+                        <h3>Optimised Route</h3>
+                        <span class="badge badge-processing">ROS / REST</span>
                     </div>
-                    <div class="card-body" style="padding:var(--sp-2)">
-                        <div class="signature-area">
-                            <canvas id="sig-canvas"></canvas>
-                        </div>
-                    </div>
-                    <div class="card-footer text-muted" style="font-size:var(--font-xs)">
-                        Customer signs above to confirm delivery receipt.
-                    </div>
-                </div>
-
-                <!-- Proof Photo -->
-                <div class="card mb-2">
-                    <div class="card-header"><h3>Proof Photo</h3></div>
                     <div class="card-body">
-                        <div class="form-group" style="margin-bottom:0">
-                            <label for="proof-photo">Upload delivery photo</label>
-                            <input type="file" id="proof-photo" accept="image/*" capture="environment">
+                        <div id="route-list">
+                            <!-- Rendered by DriverApp.renderRoute() -->
                         </div>
-                        <div id="photo-preview"></div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="map-placeholder" style="height:180px">
+                            <span class="map-icon">🗺️</span>
+                            <span>Route Map</span>
+                            <small class="text-dim">Google Maps / Leaflet integration point</small>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Submit POD -->
-                <button class="btn btn-success btn-block btn-lg" onclick="ToastManager.success('Proof of Delivery submitted!')">
-                    ✔ Submit Proof of Delivery
-                </button>
+            <!-- VIEW: PROOF OF DELIVERY -->
+            <section id="drv-pod" class="view-section">
 
+                <div class="max-w-form">
+
+                    <!-- Digital Signature -->
+                    <div class="card mb-2">
+                        <div class="card-header">
+                            <h3>Digital Signature</h3>
+                            <button class="btn btn-outline btn-sm" id="btn-clear-sig">Clear</button>
+                        </div>
+                        <div class="card-body" style="padding:var(--sp-2)">
+                            <div class="signature-area">
+                                <canvas id="sig-canvas"></canvas>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted" style="font-size:var(--font-xs)">
+                            Customer signs above to confirm delivery receipt.
+                        </div>
+                    </div>
+
+                    <!-- Proof Photo -->
+                    <div class="card mb-2">
+                        <div class="card-header">
+                            <h3>Proof Photo</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group" style="margin-bottom:0">
+                                <label for="proof-photo">Upload delivery photo</label>
+                                <input type="file" id="proof-photo" accept="image/*" capture="environment">
+                            </div>
+                            <div id="photo-preview"></div>
+                        </div>
+                    </div>
+
+                    <!-- Submit POD -->
+                    <button class="btn btn-success btn-block btn-lg"
+                        onclick="ToastManager.success('Proof of Delivery submitted!')">
+                        ✔ Submit Proof of Delivery
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div><!-- end .page-content -->
+
+    </div><!-- end .main-content -->
+
+    <!-- ============ FAIL REASON MODAL ============ -->
+    <div class="modal-overlay hidden" id="fail-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Mark as Failed</h3>
+                <button class="btn btn-icon btn-outline" id="btn-cancel-fail">✕</button>
             </div>
-
-        </section>
-
-    </div><!-- end .page-content -->
-
-</div><!-- end .main-content -->
-
-<!-- ============ FAIL REASON MODAL ============ -->
-<div class="modal-overlay hidden" id="fail-modal">
-    <div class="modal">
-        <div class="modal-header">
-            <h3>Mark as Failed</h3>
-            <button class="btn btn-icon btn-outline" id="btn-cancel-fail">✕</button>
-        </div>
-        <div class="modal-body">
-            <div class="form-group">
-                <label for="fail-reason">Select Reason</label>
-                <select id="fail-reason">
-                    <option value="Customer not available">Customer not available</option>
-                    <option value="Wrong address">Wrong address</option>
-                    <option value="Package damaged">Package damaged</option>
-                    <option value="Customer refused delivery">Customer refused delivery</option>
-                    <option value="Access restricted">Access restricted</option>
-                    <option value="Other">Other</option>
-                </select>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="fail-reason">Select Reason</label>
+                    <select id="fail-reason">
+                        <option value="Customer not available">Customer not available</option>
+                        <option value="Wrong address">Wrong address</option>
+                        <option value="Package damaged">Package damaged</option>
+                        <option value="Customer refused delivery">Customer refused delivery</option>
+                        <option value="Access restricted">Access restricted</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-outline" id="btn-cancel-fail-2" onclick="DriverApp.closeFailModal()">Cancel</button>
-            <button class="btn btn-danger" id="btn-confirm-fail">Confirm Failure</button>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="btn-cancel-fail-2"
+                    onclick="DriverApp.closeFailModal()">Cancel</button>
+                <button class="btn btn-danger" id="btn-confirm-fail">Confirm Failure</button>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- ============ DEMO TOOLBAR ============ -->
-<div class="demo-toolbar">
-    <span>🧪 Demo:</span>
-    <button class="btn btn-warning btn-sm" id="btn-demo-event">⚡ Trigger Route Update</button>
-</div>
+    <!-- ============ DEMO TOOLBAR ============ -->
+    <div class="demo-toolbar">
+        <span>🧪 Demo:</span>
+        <button class="btn btn-warning btn-sm" id="btn-demo-event">⚡ Trigger Route Update</button>
+    </div>
 
-<!-- Scripts -->
-<script src="js/app.js"></script>
-<script>
-    // Show driver name from session
-    const user = JSON.parse(sessionStorage.getItem("st_user") || "{}");
-    if (user.name) {
-        document.getElementById("driver-name").textContent = user.name;
-        document.getElementById("driver-avatar").textContent = user.name.charAt(0);
-    }
-</script>
+    <!-- Scripts -->
+    <!-- STOMP / SockJS for real-time WebSocket -->
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Show driver name from session
+        const user = JSON.parse(sessionStorage.getItem("st_user") || "{}");
+        if (user.name) {
+            document.getElementById("driver-name").textContent = user.name;
+            document.getElementById("driver-avatar").textContent = user.name.charAt(0);
+        }
+    </script>
 
 </body>
+
 </html>

@@ -1,0 +1,1389 @@
+cms-soap  | 
+cms-soap  |   .   ____          _            __ _ _
+cms-soap  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+cms-soap  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+cms-soap  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+cms-soap  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+cms-soap  |  =========|_|==============|___/=/_/_/_/
+cms-soap  |  :: Spring Boot ::                (v3.2.5)
+cms-soap  | 
+cms-soap  | 2026-02-25T17:18:04.974Z  INFO 1 --- [cms-soap] [           main] l.swiftlogistics.cms.CmsSoapApplication  : Starting CmsSoapApplication using Java 17.0.18 with PID 1 (/app/app.jar started by root in /app)
+cms-soap  | 2026-02-25T17:18:04.995Z  INFO 1 --- [cms-soap] [           main] l.swiftlogistics.cms.CmsSoapApplication  : No active profile set, falling back to 1 default profile: "default"
+cms-soap  | 2026-02-25T17:18:13.912Z  INFO 1 --- [cms-soap] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fff7ac8c-cf5f-3aa2-ae39-5457cb577687
+cms-soap  | 2026-02-25T17:18:14.242Z  WARN 1 --- [cms-soap] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+cms-soap  | 2026-02-25T17:18:14.511Z  INFO 1 --- [cms-soap] [           main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+cms-soap  | 2026-02-25T17:18:14.702Z  WARN 1 --- [cms-soap] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+cms-soap  | 2026-02-25T17:18:14.744Z  WARN 1 --- [cms-soap] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+cms-soap  | 2026-02-25T17:18:16.708Z  INFO 1 --- [cms-soap] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+cms-soap  | 2026-02-25T17:18:16.852Z  INFO 1 --- [cms-soap] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+cms-soap  | 2026-02-25T17:18:16.864Z  INFO 1 --- [cms-soap] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+cms-soap  | 2026-02-25T17:18:17.359Z  INFO 1 --- [cms-soap] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+cms-soap  | 2026-02-25T17:18:17.369Z  INFO 1 --- [cms-soap] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11960 ms
+cms-soap  | 2026-02-25T17:18:25.524Z  INFO 1 --- [cms-soap] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+cms-soap  | 2026-02-25T17:18:25.942Z  WARN 1 --- [cms-soap] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+cms-soap  | 2026-02-25T17:18:26.002Z  INFO 1 --- [cms-soap] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+cms-soap  | 2026-02-25T17:18:26.538Z  INFO 1 --- [cms-soap] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+cms-soap  | 2026-02-25T17:18:27.138Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+cms-soap  | 2026-02-25T17:18:27.167Z  INFO 1 --- [cms-soap] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+cms-soap  | 2026-02-25T17:18:27.309Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+cms-soap  | 2026-02-25T17:18:27.318Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+cms-soap  | 2026-02-25T17:18:27.319Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+cms-soap  | 2026-02-25T17:18:27.319Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+cms-soap  | 2026-02-25T17:18:27.319Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+cms-soap  | 2026-02-25T17:18:27.319Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+cms-soap  | 2026-02-25T17:18:27.322Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+cms-soap  | 2026-02-25T17:18:31.508Z  INFO 1 --- [cms-soap] [           main] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://eureka:8761/eureka/}, exception=I/O error on GET request for "http://eureka:8761/eureka/apps/": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://eureka:8761/eureka/apps/": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+cms-soap  | 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+cms-soap  | 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+cms-soap  | 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+cms-soap  | 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplications(RestTemplateEurekaHttpClient.java:135)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+cms-soap  | 	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1045)
+cms-soap  | 	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:958)
+cms-soap  | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:396)
+cms-soap  | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:247)
+cms-soap  | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:242)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:68)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:321)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+cms-soap  | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+cms-soap  | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+cms-soap  | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:365)
+cms-soap  | 	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:375)
+cms-soap  | 	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:362)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+cms-soap  | 	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:128)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:116)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+cms-soap  | 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+cms-soap  | 	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:482)
+cms-soap  | 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+cms-soap  | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+cms-soap  | 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$SpringCGLIB$$0.getEurekaClient(<generated>)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:83)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:66)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:89)
+cms-soap  | 	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+cms-soap  | 	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:471)
+cms-soap  | 	at java.base/java.lang.Iterable.forEach(Unknown Source)
+cms-soap  | 	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:260)
+cms-soap  | 	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:205)
+cms-soap  | 	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:981)
+cms-soap  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+cms-soap  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+cms-soap  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+cms-soap  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+cms-soap  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+cms-soap  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+cms-soap  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+cms-soap  | 	at lk.swiftlogistics.cms.CmsSoapApplication.main(CmsSoapApplication.java:9)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+cms-soap  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:91)
+cms-soap  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:53)
+cms-soap  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:58)
+cms-soap  | Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+cms-soap  | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+cms-soap  | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+cms-soap  | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source)
+cms-soap  | 	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+cms-soap  | 	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+cms-soap  | 	at java.base/java.net.Socket.connect(Unknown Source)
+cms-soap  | 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+cms-soap  | 	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+cms-soap  | 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+cms-soap  | 	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+cms-soap  | 	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:184)
+cms-soap  | 	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+cms-soap  | 	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+cms-soap  | 	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+cms-soap  | 	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+cms-soap  | 	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+cms-soap  | 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+cms-soap  | 	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$3(RestTemplateTransportClientFactory.java:170)
+cms-soap  | 	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+cms-soap  | 	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+cms-soap  | 	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+cms-soap  | 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+cms-soap  | 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+cms-soap  | 	... 74 more
+cms-soap  | 
+cms-soap  | 2026-02-25T17:18:31.508Z  WARN 1 --- [cms-soap] [           main] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://eureka:8761/eureka/apps/": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+cms-soap  | 2026-02-25T17:18:31.525Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CMS-SOAP/268eb0437067:cms-soap:8081 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+cms-soap  | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+cms-soap  | 	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1045)
+cms-soap  | 	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:958)
+cms-soap  | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:396)
+cms-soap  | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:247)
+cms-soap  | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:242)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:68)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:321)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+cms-soap  | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+cms-soap  | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+cms-soap  | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:365)
+cms-soap  | 	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:375)
+cms-soap  | 	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:362)
+cms-soap  | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+cms-soap  | 	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:128)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:116)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+cms-soap  | 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+cms-soap  | 	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:482)
+cms-soap  | 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+cms-soap  | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+cms-soap  | 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$SpringCGLIB$$0.getEurekaClient(<generated>)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:83)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:66)
+cms-soap  | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:89)
+cms-soap  | 	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+cms-soap  | 	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:471)
+cms-soap  | 	at java.base/java.lang.Iterable.forEach(Unknown Source)
+cms-soap  | 	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:260)
+cms-soap  | 	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:205)
+cms-soap  | 	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:981)
+cms-soap  | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+cms-soap  | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+cms-soap  | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+cms-soap  | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+cms-soap  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+cms-soap  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+cms-soap  | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+cms-soap  | 	at lk.swiftlogistics.cms.CmsSoapApplication.main(CmsSoapApplication.java:9)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+cms-soap  | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+cms-soap  | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+cms-soap  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:91)
+cms-soap  | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:53)
+cms-soap  | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:58)
+cms-soap  | 
+cms-soap  | 2026-02-25T17:18:31.526Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from primary servers failed
+cms-soap  | 2026-02-25T17:18:31.526Z  WARN 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Using default backup registry implementation which does not do anything.
+cms-soap  | 2026-02-25T17:18:31.537Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from backup servers failed
+cms-soap  | 2026-02-25T17:18:31.562Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+cms-soap  | 2026-02-25T17:18:31.644Z  INFO 1 --- [cms-soap] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+cms-soap  | 2026-02-25T17:18:31.688Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1772039911686 with initial instances count: 0
+cms-soap  | 2026-02-25T17:18:31.751Z  INFO 1 --- [cms-soap] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application CMS-SOAP with eureka with status UP
+cms-soap  | 2026-02-25T17:18:31.756Z  INFO 1 --- [cms-soap] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1772039911756, current=UP, previous=STARTING]
+cms-soap  | 2026-02-25T17:18:31.777Z  INFO 1 --- [cms-soap] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CMS-SOAP/268eb0437067:cms-soap:8081: registering service...
+cms-soap  | 2026-02-25T17:18:31.923Z  INFO 1 --- [cms-soap] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path ''
+cms-soap  | 2026-02-25T17:18:31.930Z  INFO 1 --- [cms-soap] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8081
+cms-soap  | 2026-02-25T17:18:32.094Z  INFO 1 --- [cms-soap] [           main] l.swiftlogistics.cms.CmsSoapApplication  : Started CmsSoapApplication in 30.725 seconds (process running for 34.588)
+cms-soap  | 2026-02-25T17:18:33.242Z  INFO 1 --- [cms-soap] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_CMS-SOAP/268eb0437067:cms-soap:8081 - registration status: 204
+cms-soap  | 2026-02-25T17:19:01.710Z  INFO 1 --- [cms-soap] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+cms-soap  | 2026-02-25T17:19:01.711Z  INFO 1 --- [cms-soap] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+cms-soap  | 2026-02-25T17:19:01.711Z  INFO 1 --- [cms-soap] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+cms-soap  | 2026-02-25T17:19:01.711Z  INFO 1 --- [cms-soap] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+cms-soap  | 2026-02-25T17:19:01.712Z  INFO 1 --- [cms-soap] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+cms-soap  | 2026-02-25T17:19:01.712Z  INFO 1 --- [cms-soap] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+cms-soap  | 2026-02-25T17:19:01.712Z  INFO 1 --- [cms-soap] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+cms-soap  | 2026-02-25T17:19:01.790Z  INFO 1 --- [cms-soap] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+cms-soap  | 2026-02-25T17:19:22.436Z  INFO 1 --- [cms-soap] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring MessageDispatcherServlet 'messageDispatcherServlet'
+cms-soap  | 2026-02-25T17:19:22.436Z  INFO 1 --- [cms-soap] [nio-8081-exec-1] o.s.w.t.http.MessageDispatcherServlet    : Initializing Servlet 'messageDispatcherServlet'
+cms-soap  | 2026-02-25T17:19:22.444Z  INFO 1 --- [cms-soap] [nio-8081-exec-1] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+cms-soap  | 2026-02-25T17:19:22.461Z  INFO 1 --- [cms-soap] [nio-8081-exec-1] o.s.w.t.http.MessageDispatcherServlet    : Completed initialization in 24 ms
+cms-soap  | 2026-02-25T17:19:22.531Z  WARN 1 --- [cms-soap] [nio-8081-exec-1] o.s.ws.server.EndpointNotFound           : No endpoint mapping found for [SaajSoapMessage {http://schemas.xmlsoap.org/soap/envelope/}Envelope]
+cms-soap  | 2026-02-25T17:23:28.929Z  INFO 1 --- [cms-soap] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+cms-soap  | 2026-02-25T17:24:03.506Z  WARN 1 --- [cms-soap] [nio-8081-exec-6] o.s.ws.server.EndpointNotFound           : No endpoint mapping found for [SaajSoapMessage {http://schemas.xmlsoap.org/soap/envelope/}Envelope]
+cms-soap  | 2026-02-25T17:28:30.485Z  INFO 1 --- [cms-soap] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+cms-soap  | 2026-02-25T17:30:23.898Z  WARN 1 --- [cms-soap] [io-8081-exec-10] o.s.ws.server.EndpointNotFound           : No endpoint mapping found for [SaajSoapMessage {http://schemas.xmlsoap.org/soap/envelope/}Envelope]
+eureka    | Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+eureka    | 
+eureka    |   .   ____          _            __ _ _
+eureka    |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+eureka    | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+eureka    |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+eureka    |   '  |____| .__|_| |_|_| |_\__, | / / / /
+eureka    |  =========|_|==============|___/=/_/_/_/
+eureka    |  :: Spring Boot ::                (v3.2.5)
+eureka    | 
+eureka    | 2026-02-25T17:18:03.990Z  INFO 1 --- [eureka-server] [           main] l.s.eureka.EurekaServerApplication       : Starting EurekaServerApplication using Java 17.0.18 with PID 1 (/app/app.jar started by root in /app)
+eureka    | 2026-02-25T17:18:03.996Z  INFO 1 --- [eureka-server] [           main] l.s.eureka.EurekaServerApplication       : No active profile set, falling back to 1 default profile: "default"
+eureka    | 2026-02-25T17:18:13.188Z  INFO 1 --- [eureka-server] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d15412a2-dedd-38bc-86c9-0f5a35ebb0de
+eureka    | 2026-02-25T17:18:13.541Z  WARN 1 --- [eureka-server] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+eureka    | 2026-02-25T17:18:13.574Z  WARN 1 --- [eureka-server] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+eureka    | 2026-02-25T17:18:15.399Z  INFO 1 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8761 (http)
+eureka    | 2026-02-25T17:18:15.448Z  INFO 1 --- [eureka-server] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+eureka    | 2026-02-25T17:18:15.450Z  INFO 1 --- [eureka-server] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+eureka    | 2026-02-25T17:18:15.714Z  INFO 1 --- [eureka-server] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+eureka    | 2026-02-25T17:18:15.721Z  INFO 1 --- [eureka-server] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 11364 ms
+eureka    | Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+eureka    | 2026-02-25T17:18:22.100Z  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+eureka    | 2026-02-25T17:18:22.106Z  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+eureka    | 2026-02-25T17:18:23.176Z  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+eureka    | 2026-02-25T17:18:23.180Z  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+eureka    | 2026-02-25T17:18:29.056Z  WARN 1 --- [eureka-server] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+eureka    | 2026-02-25T17:18:29.273Z  INFO 1 --- [eureka-server] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+eureka    | 2026-02-25T17:18:29.411Z  INFO 1 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+eureka    | 2026-02-25T17:18:29.418Z  INFO 1 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
+eureka    | 2026-02-25T17:18:29.450Z  INFO 1 --- [eureka-server] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1772039909437 with initial instances count: 0
+eureka    | 2026-02-25T17:18:29.677Z  INFO 1 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
+eureka    | 2026-02-25T17:18:29.698Z  INFO 1 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
+eureka    | 2026-02-25T17:18:30.500Z  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
+eureka    | 2026-02-25T17:18:30.501Z  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
+eureka    | 2026-02-25T17:18:30.502Z  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
+eureka    | 2026-02-25T17:18:30.513Z  INFO 1 --- [eureka-server] [           main] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
+eureka    | 2026-02-25T17:18:31.185Z  INFO 1 --- [eureka-server] [           main] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
+eureka    | 2026-02-25T17:18:31.307Z  INFO 1 --- [eureka-server] [           main] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
+eureka    | 2026-02-25T17:18:31.320Z  INFO 1 --- [eureka-server] [           main] c.n.eureka.DefaultEurekaServerContext    : Initialized
+eureka    | 2026-02-25T17:18:31.507Z  INFO 1 --- [eureka-server] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+eureka    | 2026-02-25T17:18:32.001Z  INFO 1 --- [eureka-server] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVER with eureka with status UP
+eureka    | 2026-02-25T17:18:32.106Z  INFO 1 --- [eureka-server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
+eureka    | 2026-02-25T17:18:32.108Z  INFO 1 --- [eureka-server] [       Thread-9] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
+eureka    | 2026-02-25T17:18:32.109Z  INFO 1 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
+eureka    | 2026-02-25T17:18:32.110Z  INFO 1 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
+eureka    | 2026-02-25T17:18:32.121Z  INFO 1 --- [eureka-server] [       Thread-9] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
+eureka    | 2026-02-25T17:18:32.179Z  INFO 1 --- [eureka-server] [       Thread-9] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
+eureka    | 2026-02-25T17:18:32.185Z  INFO 1 --- [eureka-server] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8761 (http) with context path ''
+eureka    | 2026-02-25T17:18:32.187Z  INFO 1 --- [eureka-server] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
+eureka    | 2026-02-25T17:18:32.272Z  INFO 1 --- [eureka-server] [           main] l.s.eureka.EurekaServerApplication       : Started EurekaServerApplication in 32.486 seconds (process running for 36.222)
+eureka    | 2026-02-25T17:18:32.495Z  INFO 1 --- [eureka-server] [nio-8761-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+eureka    | 2026-02-25T17:18:32.495Z  INFO 1 --- [eureka-server] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+eureka    | 2026-02-25T17:18:32.509Z  INFO 1 --- [eureka-server] [nio-8761-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+eureka    | 2026-02-25T17:18:33.139Z  INFO 1 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CMS-SOAP/268eb0437067:cms-soap:8081 with status UP (replication=false)
+eureka    | 2026-02-25T17:18:34.150Z  INFO 1 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance CMS-SOAP/268eb0437067:cms-soap:8081 with status UP (replication=true)
+eureka    | 2026-02-25T17:18:40.210Z  INFO 1 --- [eureka-server] [nio-8761-exec-4] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SWIFTTRACK-CORE/fe5ab6dd5cb4:swifttrack-core:8080 with status UP (replication=false)
+eureka    | 2026-02-25T17:18:40.723Z  INFO 1 --- [eureka-server] [nio-8761-exec-5] c.n.e.registry.AbstractInstanceRegistry  : Registered instance SWIFTTRACK-CORE/fe5ab6dd5cb4:swifttrack-core:8080 with status UP (replication=true)
+eureka    | 2026-02-25T17:18:57.603Z  WARN 1 --- [eureka-server] [nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: ROS-REST - 98c1ebc379a7:ros-rest:8082
+eureka    | 2026-02-25T17:18:57.603Z  WARN 1 --- [eureka-server] [nio-8761-exec-6] c.n.eureka.resources.InstanceResource    : Not Found (Renew): ROS-REST - 98c1ebc379a7:ros-rest:8082
+eureka    | 2026-02-25T17:18:57.677Z  INFO 1 --- [eureka-server] [nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ROS-REST/98c1ebc379a7:ros-rest:8082 with status UP (replication=false)
+eureka    | 2026-02-25T17:18:58.192Z  INFO 1 --- [eureka-server] [nio-8761-exec-9] c.n.e.registry.AbstractInstanceRegistry  : Registered instance ROS-REST/98c1ebc379a7:ros-rest:8082 with status UP (replication=true)
+eureka    | 2026-02-25T17:18:59.367Z  WARN 1 --- [eureka-server] [nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: WMS-TCP - 944fa812ccd9:wms-tcp
+eureka    | 2026-02-25T17:18:59.367Z  WARN 1 --- [eureka-server] [nio-8761-exec-1] c.n.eureka.resources.InstanceResource    : Not Found (Renew): WMS-TCP - 944fa812ccd9:wms-tcp
+eureka    | 2026-02-25T17:18:59.391Z  INFO 1 --- [eureka-server] [nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance WMS-TCP/944fa812ccd9:wms-tcp with status UP (replication=false)
+eureka    | 2026-02-25T17:18:59.900Z  INFO 1 --- [eureka-server] [nio-8761-exec-3] c.n.e.registry.AbstractInstanceRegistry  : Registered instance WMS-TCP/944fa812ccd9:wms-tcp with status UP (replication=true)
+eureka    | 2026-02-25T17:19:32.437Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+eureka    | 2026-02-25T17:20:32.745Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+eureka    | 2026-02-25T17:21:33.057Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+eureka    | 2026-02-25T17:22:33.364Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+eureka    | 2026-02-25T17:23:33.673Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+eureka    | 2026-02-25T17:24:33.985Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+eureka    | 2026-02-25T17:25:34.293Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+eureka    | 2026-02-25T17:26:34.603Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+eureka    | 2026-02-25T17:27:34.913Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+eureka    | 2026-02-25T17:28:35.228Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+eureka    | 2026-02-25T17:29:35.539Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+eureka    | 2026-02-25T17:30:35.852Z  INFO 1 --- [eureka-server] [a-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+wms-tcp   | 
+wms-tcp   |   .   ____          _            __ _ _
+wms-tcp   |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+wms-tcp   | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+wms-tcp   |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+wms-tcp   |   '  |____| .__|_| |_|_| |_\__, | / / / /
+wms-tcp   |  =========|_|==============|___/=/_/_/_/
+wms-tcp   |  :: Spring Boot ::                (v3.2.5)
+wms-tcp   | 
+wms-tcp   | 2026-02-25T17:18:05.739Z  INFO 1 --- [wms-tcp] [           main] lk.swiftlogistics.wms.WmsApplication     : Starting WmsApplication v1.0.0 using Java 17.0.18 with PID 1 (/app/app.jar started by root in /app)
+wms-tcp   | 2026-02-25T17:18:05.773Z  INFO 1 --- [wms-tcp] [           main] lk.swiftlogistics.wms.WmsApplication     : No active profile set, falling back to 1 default profile: "default"
+wms-tcp   | 2026-02-25T17:18:14.391Z  INFO 1 --- [wms-tcp] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=2b1a4472-5522-39ad-a716-d6b0b9503616
+wms-tcp   | 2026-02-25T17:18:14.830Z  WARN 1 --- [wms-tcp] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+wms-tcp   | 2026-02-25T17:18:14.843Z  WARN 1 --- [wms-tcp] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+wms-tcp   | 2026-02-25T17:18:16.650Z  INFO 1 --- [wms-tcp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+wms-tcp   | 2026-02-25T17:18:16.717Z  INFO 1 --- [wms-tcp] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+wms-tcp   | 2026-02-25T17:18:16.722Z  INFO 1 --- [wms-tcp] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+wms-tcp   | 2026-02-25T17:18:16.986Z  INFO 1 --- [wms-tcp] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+wms-tcp   | 2026-02-25T17:18:17.013Z  INFO 1 --- [wms-tcp] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 10783 ms
+wms-tcp   | 2026-02-25T17:18:24.352Z  INFO 1 --- [wms-tcp] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+wms-tcp   | 2026-02-25T17:18:24.679Z  WARN 1 --- [wms-tcp] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+wms-tcp   | 2026-02-25T17:18:24.751Z  INFO 1 --- [wms-tcp] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+wms-tcp   | 2026-02-25T17:18:25.314Z  INFO 1 --- [wms-tcp] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+wms-tcp   | 2026-02-25T17:18:26.198Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+wms-tcp   | 2026-02-25T17:18:26.252Z  INFO 1 --- [wms-tcp] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+wms-tcp   | 2026-02-25T17:18:26.315Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+wms-tcp   | 2026-02-25T17:18:26.315Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+wms-tcp   | 2026-02-25T17:18:26.315Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+wms-tcp   | 2026-02-25T17:18:26.316Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+wms-tcp   | 2026-02-25T17:18:26.316Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+wms-tcp   | 2026-02-25T17:18:26.316Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+wms-tcp   | 2026-02-25T17:18:26.316Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+wms-tcp   | 2026-02-25T17:18:29.126Z  INFO 1 --- [wms-tcp] [           main] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://eureka:8761/eureka/}, exception=I/O error on GET request for "http://eureka:8761/eureka/apps/": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://eureka:8761/eureka/apps/": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+wms-tcp   | 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+wms-tcp   | 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+wms-tcp   | 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+wms-tcp   | 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+wms-tcp   | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+wms-tcp   | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplications(RestTemplateEurekaHttpClient.java:135)
+wms-tcp   | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+wms-tcp   | 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+wms-tcp   | 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+wms-tcp   | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+wms-tcp   | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+wms-tcp   | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+wms-tcp   | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+wms-tcp   | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+wms-tcp   | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+wms-tcp   | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+wms-tcp   | 	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1045)
+wms-tcp   | 	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:958)
+wms-tcp   | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:396)
+wms-tcp   | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:247)
+postgres  | The files belonging to this database system will be owned by user "postgres".
+postgres  | This user must also own the server process.
+postgres  | 
+postgres  | The database cluster will be initialized with locale "en_US.utf8".
+postgres  | The default database encoding has accordingly been set to "UTF8".
+postgres  | The default text search configuration will be set to "english".
+postgres  | 
+postgres  | Data page checksums are disabled.
+postgres  | 
+postgres  | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres  | creating subdirectories ... ok
+postgres  | selecting dynamic shared memory implementation ... posix
+postgres  | selecting default max_connections ... 100
+postgres  | selecting default shared_buffers ... 128MB
+postgres  | selecting default time zone ... Etc/UTC
+postgres  | creating configuration files ... ok
+postgres  | running bootstrap script ... ok
+postgres  | performing post-bootstrap initialization ... ok
+postgres  | syncing data to disk ... ok
+postgres  | 
+postgres  | 
+postgres  | Success. You can now start the database server using:
+postgres  | 
+postgres  |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres  | 
+postgres  | initdb: warning: enabling "trust" authentication for local connections
+postgres  | initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+postgres  | waiting for server to start....2026-02-25 17:17:59.353 UTC [49] LOG:  starting PostgreSQL 16.12 (Debian 16.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+postgres  | 2026-02-25 17:17:59.373 UTC [49] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres  | 2026-02-25 17:17:59.434 UTC [52] LOG:  database system was shut down at 2026-02-25 17:17:58 UTC
+postgres  | 2026-02-25 17:17:59.487 UTC [49] LOG:  database system is ready to accept connections
+postgres  |  done
+postgres  | server started
+postgres  | CREATE DATABASE
+postgres  | 
+postgres  | 
+postgres  | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres  | 
+postgres  | waiting for server to shut down...2026-02-25 17:18:00.265 UTC [49] LOG:  received fast shutdown request
+postgres  | .2026-02-25 17:18:00.276 UTC [49] LOG:  aborting any active transactions
+postgres  | 2026-02-25 17:18:00.306 UTC [49] LOG:  background worker "logical replication launcher" (PID 55) exited with exit code 1
+postgres  | 2026-02-25 17:18:00.310 UTC [50] LOG:  shutting down
+postgres  | 2026-02-25 17:18:00.322 UTC [50] LOG:  checkpoint starting: shutdown immediate
+postgres  | 2026-02-25 17:18:00.650 UTC [50] LOG:  checkpoint complete: wrote 926 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.117 s, sync=0.134 s, total=0.340 s; sync files=301, longest=0.009 s, average=0.001 s; distance=4273 kB, estimate=4273 kB; lsn=0/191F0E8, redo lsn=0/191F0E8
+postgres  | 2026-02-25 17:18:00.669 UTC [49] LOG:  database system is shut down
+postgres  |  done
+postgres  | server stopped
+postgres  | 
+postgres  | PostgreSQL init process complete; ready for start up.
+postgres  | 
+postgres  | 2026-02-25 17:18:00.767 UTC [1] LOG:  starting PostgreSQL 16.12 (Debian 16.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+postgres  | 2026-02-25 17:18:00.767 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres  | 2026-02-25 17:18:00.767 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres  | 2026-02-25 17:18:00.797 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres  | 2026-02-25 17:18:00.828 UTC [65] LOG:  database system was shut down at 2026-02-25 17:18:00 UTC
+postgres  | 2026-02-25 17:18:00.864 UTC [1] LOG:  database system is ready to accept connections
+postgres  | 2026-02-25 17:23:02.489 UTC [63] LOG:  checkpoint starting: time
+postgres  | 2026-02-25 17:23:13.244 UTC [63] LOG:  checkpoint complete: wrote 107 buffers (0.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=10.654 s, sync=0.030 s, total=10.756 s; sync files=55, longest=0.006 s, average=0.001 s; distance=472 kB, estimate=472 kB; lsn=0/1995400, redo lsn=0/19953C8
+postgres  | 2026-02-25 17:28:03.721 UTC [63] LOG:  checkpoint starting: time
+postgres  | 2026-02-25 17:28:04.006 UTC [63] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.208 s, sync=0.010 s, total=0.285 s; sync files=3, longest=0.007 s, average=0.004 s; distance=1 kB, estimate=425 kB; lsn=0/1995930, redo lsn=0/19958F8
+swifttrack-core  | 
+swifttrack-core  |   .   ____          _            __ _ _
+swifttrack-core  |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+swifttrack-core  | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+swifttrack-core  |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+swifttrack-core  |   '  |____| .__|_| |_|_| |_\__, | / / / /
+swifttrack-core  |  =========|_|==============|___/=/_/_/_/
+swifttrack-core  |  :: Spring Boot ::                (v3.2.5)
+swifttrack-core  | 
+swifttrack-core  | 2026-02-25T17:18:11.309Z  INFO 1 --- [swifttrack-core] [           main] l.s.swifttrack.SwiftTrackApplication     : Starting SwiftTrackApplication using Java 17.0.18 with PID 1 (/app/app.jar started by root in /app)
+swifttrack-core  | 2026-02-25T17:18:11.348Z DEBUG 1 --- [swifttrack-core] [           main] l.s.swifttrack.SwiftTrackApplication     : Running with Spring Boot v3.2.5, Spring v6.1.6
+swifttrack-core  | 2026-02-25T17:18:11.361Z  INFO 1 --- [swifttrack-core] [           main] l.s.swifttrack.SwiftTrackApplication     : No active profile set, falling back to 1 default profile: "default"
+swifttrack-core  | 2026-02-25T17:18:21.324Z  INFO 1 --- [swifttrack-core] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+swifttrack-core  | 2026-02-25T17:18:22.371Z  INFO 1 --- [swifttrack-core] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 982 ms. Found 1 JPA repository interface.
+swifttrack-core  | 2026-02-25T17:18:24.199Z  INFO 1 --- [swifttrack-core] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=a1547afb-54a3-39cd-88a6-ca0ac7cb61ef
+swifttrack-core  | 2026-02-25T17:18:25.279Z  WARN 1 --- [swifttrack-core] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+swifttrack-core  | 2026-02-25T17:18:25.580Z  INFO 1 --- [swifttrack-core] [           main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+swifttrack-core  | 2026-02-25T17:18:27.044Z  WARN 1 --- [swifttrack-core] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+swifttrack-core  | 2026-02-25T17:18:27.074Z  WARN 1 --- [swifttrack-core] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+swifttrack-core  | 2026-02-25T17:18:29.363Z  INFO 1 --- [swifttrack-core] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+swifttrack-core  | 2026-02-25T17:18:29.495Z  INFO 1 --- [swifttrack-core] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+swifttrack-core  | 2026-02-25T17:18:29.498Z  INFO 1 --- [swifttrack-core] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+swifttrack-core  | 2026-02-25T17:18:29.707Z  INFO 1 --- [swifttrack-core] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+swifttrack-core  | 2026-02-25T17:18:29.716Z  INFO 1 --- [swifttrack-core] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 17708 ms
+swifttrack-core  | 2026-02-25T17:18:31.953Z  INFO 1 --- [swifttrack-core] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+swifttrack-core  | 2026-02-25T17:18:32.778Z  INFO 1 --- [swifttrack-core] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@61c4cebd
+swifttrack-core  | 2026-02-25T17:18:32.789Z  INFO 1 --- [swifttrack-core] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+swifttrack-core  | 2026-02-25T17:18:33.162Z  INFO 1 --- [swifttrack-core] [           main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+swifttrack-core  | 2026-02-25T17:18:33.163Z  INFO 1 --- [swifttrack-core] [           main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+wms-tcp          | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:242)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:68)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:321)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+wms-tcp          | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+wms-tcp          | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+wms-tcp          | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:365)
+wms-tcp          | 	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:375)
+wms-tcp          | 	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:362)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+wms-tcp          | 	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:128)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:116)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+wms-tcp          | 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+wms-tcp          | 	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:482)
+wms-tcp          | 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+wms-tcp          | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+wms-tcp          | 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$SpringCGLIB$$0.getEurekaClient(<generated>)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:83)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:66)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:89)
+wms-tcp          | 	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+wms-tcp          | 	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:471)
+wms-tcp          | 	at java.base/java.lang.Iterable.forEach(Unknown Source)
+wms-tcp          | 	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:260)
+wms-tcp          | 	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:205)
+wms-tcp          | 	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:981)
+wms-tcp          | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+wms-tcp          | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+wms-tcp          | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+wms-tcp          | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+wms-tcp          | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+wms-tcp          | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+wms-tcp          | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+wms-tcp          | 	at lk.swiftlogistics.wms.WmsApplication.main(WmsApplication.java:9)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+wms-tcp          | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:91)
+wms-tcp          | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:53)
+wms-tcp          | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:58)
+wms-tcp          | Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+wms-tcp          | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+wms-tcp          | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+wms-tcp          | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source)
+wms-tcp          | 	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+wms-tcp          | 	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+wms-tcp          | 	at java.base/java.net.Socket.connect(Unknown Source)
+wms-tcp          | 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+wms-tcp          | 	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+wms-tcp          | 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+wms-tcp          | 	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:184)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+wms-tcp          | 	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+wms-tcp          | 	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+wms-tcp          | 	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+wms-tcp          | 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+wms-tcp          | 	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+wms-tcp          | 	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+wms-tcp          | 	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+wms-tcp          | 	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+wms-tcp          | 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+wms-tcp          | 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+wms-tcp          | 	... 74 more
+wms-tcp          | 
+wms-tcp          | 2026-02-25T17:18:29.134Z  WARN 1 --- [wms-tcp] [           main] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://eureka:8761/eureka/apps/": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+wms-tcp          | 2026-02-25T17:18:29.139Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WMS-TCP/944fa812ccd9:wms-tcp - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+wms-tcp          | 	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1045)
+wms-tcp          | 	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:958)
+wms-tcp          | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:396)
+wms-tcp          | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:247)
+wms-tcp          | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:242)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:68)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:321)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+wms-tcp          | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+wms-tcp          | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+wms-tcp          | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:365)
+wms-tcp          | 	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:375)
+wms-tcp          | 	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:362)
+wms-tcp          | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+wms-tcp          | 	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:128)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:116)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+wms-tcp          | 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+wms-tcp          | 	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:482)
+wms-tcp          | 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+wms-tcp          | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+wms-tcp          | 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$SpringCGLIB$$0.getEurekaClient(<generated>)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:83)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:66)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:89)
+wms-tcp          | 	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+wms-tcp          | 	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:471)
+wms-tcp          | 	at java.base/java.lang.Iterable.forEach(Unknown Source)
+wms-tcp          | 	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:260)
+wms-tcp          | 	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:205)
+wms-tcp          | 	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:981)
+wms-tcp          | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+wms-tcp          | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+wms-tcp          | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+wms-tcp          | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+wms-tcp          | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+wms-tcp          | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+wms-tcp          | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+wms-tcp          | 	at lk.swiftlogistics.wms.WmsApplication.main(WmsApplication.java:9)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+wms-tcp          | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+wms-tcp          | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+wms-tcp          | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:91)
+wms-tcp          | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:53)
+wms-tcp          | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:58)
+wms-tcp          | 
+wms-tcp          | 2026-02-25T17:18:29.146Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from primary servers failed
+wms-tcp          | 2026-02-25T17:18:29.149Z  WARN 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Using default backup registry implementation which does not do anything.
+wms-tcp          | 2026-02-25T17:18:29.154Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from backup servers failed
+wms-tcp          | 2026-02-25T17:18:29.167Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+wms-tcp          | 2026-02-25T17:18:29.196Z  INFO 1 --- [wms-tcp] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+wms-tcp          | 2026-02-25T17:18:29.342Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1772039909330 with initial instances count: 0
+wms-tcp          | 2026-02-25T17:18:29.401Z  INFO 1 --- [wms-tcp] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application WMS-TCP with eureka with status UP
+wms-tcp          | 2026-02-25T17:18:29.423Z  INFO 1 --- [wms-tcp] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1772039909423, current=UP, previous=STARTING]
+wms-tcp          | 2026-02-25T17:18:29.469Z  INFO 1 --- [wms-tcp] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WMS-TCP/944fa812ccd9:wms-tcp: registering service...
+wms-tcp          | 2026-02-25T17:18:29.920Z  INFO 1 --- [wms-tcp] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+wms-tcp          | 2026-02-25T17:18:29.968Z  INFO 1 --- [wms-tcp] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+wms-tcp          | 2026-02-25T17:18:30.210Z  INFO 1 --- [wms-tcp] [           main] lk.swiftlogistics.wms.WmsApplication     : Started WmsApplication in 28.723 seconds (process running for 32.657)
+wms-tcp          | 2026-02-25T17:18:30.255Z  INFO 1 --- [wms-tcp] [nfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://eureka:8761/eureka/}, exception=I/O error on POST request for "http://eureka:8761/eureka/apps/WMS-TCP": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://eureka:8761/eureka/apps/WMS-TCP": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+wms-tcp          | 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+wms-tcp          | 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+wms-tcp          | 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+wms-tcp          | 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+wms-tcp          | 	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820)
+wms-tcp          | 	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+wms-tcp          | 	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+wms-tcp          | 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+wms-tcp          | 	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+wms-tcp          | 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+wms-tcp          | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+wms-tcp          | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+wms-tcp          | 	at java.base/java.lang.Thread.run(Unknown Source)
+wms-tcp          | Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+wms-tcp          | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+wms-tcp          | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+wms-tcp          | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source)
+wms-tcp          | 	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+wms-tcp          | 	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+wms-tcp          | 	at java.base/java.net.Socket.connect(Unknown Source)
+wms-tcp          | 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+wms-tcp          | 	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+wms-tcp          | 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+wms-tcp          | 	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:184)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+wms-tcp          | 	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+wms-tcp          | 	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+wms-tcp          | 	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+wms-tcp          | 	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+wms-tcp          | 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+wms-tcp          | 	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+wms-tcp          | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+wms-tcp          | 	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+wms-tcp          | 	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+wms-tcp          | 	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+wms-tcp          | 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+wms-tcp          | 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+wms-tcp          | 	... 22 more
+wms-tcp          | 
+wms-tcp          | 2026-02-25T17:18:30.260Z  WARN 1 --- [wms-tcp] [nfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://eureka:8761/eureka/apps/WMS-TCP": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+wms-tcp          | [WMS] TCP server listening on 9099
+wms-tcp          | 2026-02-25T17:18:30.261Z  WARN 1 --- [wms-tcp] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WMS-TCP/944fa812ccd9:wms-tcp - registration failed Cannot execute request on any known server
+wms-tcp          | 
+wms-tcp          | com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:na]
+wms-tcp          | 	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+wms-tcp          | 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[na:na]
+wms-tcp          | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+wms-tcp          | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+wms-tcp          | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+wms-tcp          | 
+wms-tcp          | 2026-02-25T17:18:30.302Z  WARN 1 --- [wms-tcp] [nfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+wms-tcp          | 
+wms-tcp          | com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-2.0.2.jar!/:2.0.2]
+wms-tcp          | 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:na]
+wms-tcp          | 	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+wms-tcp          | 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[na:na]
+wms-tcp          | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+wms-tcp          | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+wms-tcp          | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+wms-tcp          | 
+wms-tcp          | 2026-02-25T17:18:59.315Z  INFO 1 --- [wms-tcp] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+wms-tcp          | 2026-02-25T17:18:59.316Z  INFO 1 --- [wms-tcp] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+wms-tcp          | 2026-02-25T17:18:59.316Z  INFO 1 --- [wms-tcp] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+wms-tcp          | 2026-02-25T17:18:59.316Z  INFO 1 --- [wms-tcp] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+wms-tcp          | 2026-02-25T17:18:59.317Z  INFO 1 --- [wms-tcp] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+wms-tcp          | 2026-02-25T17:18:59.317Z  INFO 1 --- [wms-tcp] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+wms-tcp          | 2026-02-25T17:18:59.317Z  INFO 1 --- [wms-tcp] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+wms-tcp          | 2026-02-25T17:18:59.381Z  INFO 1 --- [wms-tcp] [tbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WMS-TCP/944fa812ccd9:wms-tcp - Re-registering apps/WMS-TCP
+wms-tcp          | 2026-02-25T17:18:59.381Z  INFO 1 --- [wms-tcp] [tbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WMS-TCP/944fa812ccd9:wms-tcp: registering service...
+wms-tcp          | 2026-02-25T17:18:59.382Z  INFO 1 --- [wms-tcp] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+wms-tcp          | 2026-02-25T17:18:59.394Z  INFO 1 --- [wms-tcp] [tbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_WMS-TCP/944fa812ccd9:wms-tcp - registration status: 204
+wms-tcp          | 2026-02-25T17:23:27.902Z  INFO 1 --- [wms-tcp] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+wms-tcp          | 2026-02-25T17:28:29.459Z  INFO 1 --- [wms-tcp] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+swifttrack-core  | 2026-02-25T17:18:33.163Z  INFO 1 --- [swifttrack-core] [           main] o.f.c.internal.license.VersionPrinter    : 
+swifttrack-core  | 2026-02-25T17:18:33.220Z  INFO 1 --- [swifttrack-core] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://postgres:5432/swifttrack (PostgreSQL 16.12)
+swifttrack-core  | 2026-02-25T17:18:33.243Z  WARN 1 --- [swifttrack-core] [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.12 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+swifttrack-core  | 2026-02-25T17:18:33.320Z  INFO 1 --- [swifttrack-core] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "public"."flyway_schema_history" does not exist yet
+swifttrack-core  | 2026-02-25T17:18:33.328Z  INFO 1 --- [swifttrack-core] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.052s)
+swifttrack-core  | 2026-02-25T17:18:33.360Z  INFO 1 --- [swifttrack-core] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "public"."flyway_schema_history" ...
+swifttrack-core  | 2026-02-25T17:18:33.682Z  INFO 1 --- [swifttrack-core] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+swifttrack-core  | 2026-02-25T17:18:33.697Z  INFO 1 --- [swifttrack-core] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "1 - init"
+swifttrack-core  | 2026-02-25T17:18:33.830Z  INFO 1 --- [swifttrack-core] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "2 - add retry count"
+swifttrack-core  | 2026-02-25T17:18:33.913Z  INFO 1 --- [swifttrack-core] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "public" to version "3 - expand order"
+swifttrack-core  | 2026-02-25T17:18:34.026Z  INFO 1 --- [swifttrack-core] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 3 migrations to schema "public", now at version v3 (execution time 00:00.098s)
+swifttrack-core  | 2026-02-25T17:18:34.292Z  INFO 1 --- [swifttrack-core] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+swifttrack-core  | 2026-02-25T17:18:34.553Z  INFO 1 --- [swifttrack-core] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+swifttrack-core  | 2026-02-25T17:18:34.677Z  INFO 1 --- [swifttrack-core] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+swifttrack-core  | 2026-02-25T17:18:35.168Z  INFO 1 --- [swifttrack-core] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+swifttrack-core  | 2026-02-25T17:18:36.402Z  INFO 1 --- [swifttrack-core] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+swifttrack-core  | 2026-02-25T17:18:36.448Z  INFO 1 --- [swifttrack-core] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+swifttrack-core  | 2026-02-25T17:18:37.544Z  INFO 1 --- [swifttrack-core] [           main] o.s.ws.soap.saaj.SaajSoapMessageFactory  : Creating SAAJ 1.3 MessageFactory with SOAP 1.1 Protocol
+swifttrack-core  | 2026-02-25T17:18:37.728Z  WARN 1 --- [swifttrack-core] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+swifttrack-core  | 2026-02-25T17:18:37.872Z  INFO 1 --- [swifttrack-core] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+swifttrack-core  | 2026-02-25T17:18:38.933Z  INFO 1 --- [swifttrack-core] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+swifttrack-core  | 2026-02-25T17:18:39.090Z  WARN 1 --- [swifttrack-core] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+swifttrack-core  | 2026-02-25T17:18:39.117Z  INFO 1 --- [swifttrack-core] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+swifttrack-core  | 2026-02-25T17:18:39.290Z  INFO 1 --- [swifttrack-core] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+swifttrack-core  | 2026-02-25T17:18:39.386Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+swifttrack-core  | 2026-02-25T17:18:39.394Z  INFO 1 --- [swifttrack-core] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+swifttrack-core  | 2026-02-25T17:18:39.432Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+swifttrack-core  | 2026-02-25T17:18:39.432Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+swifttrack-core  | 2026-02-25T17:18:39.432Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+swifttrack-core  | 2026-02-25T17:18:39.432Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+swifttrack-core  | 2026-02-25T17:18:39.433Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+swifttrack-core  | 2026-02-25T17:18:39.433Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+swifttrack-core  | 2026-02-25T17:18:39.433Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+swifttrack-core  | 2026-02-25T17:18:40.020Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+swifttrack-core  | 2026-02-25T17:18:40.028Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+swifttrack-core  | 2026-02-25T17:18:40.035Z  INFO 1 --- [swifttrack-core] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+swifttrack-core  | 2026-02-25T17:18:40.043Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1772039920042 with initial instances count: 1
+swifttrack-core  | 2026-02-25T17:18:40.054Z  INFO 1 --- [swifttrack-core] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application SWIFTTRACK-CORE with eureka with status UP
+swifttrack-core  | 2026-02-25T17:18:40.055Z  INFO 1 --- [swifttrack-core] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1772039920055, current=UP, previous=STARTING]
+swifttrack-core  | 2026-02-25T17:18:40.058Z  INFO 1 --- [swifttrack-core] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SWIFTTRACK-CORE/fe5ab6dd5cb4:swifttrack-core:8080: registering service...
+swifttrack-core  | 2026-02-25T17:18:40.087Z  INFO 1 --- [swifttrack-core] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+swifttrack-core  | 2026-02-25T17:18:40.090Z  INFO 1 --- [swifttrack-core] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8080
+swifttrack-core  | 2026-02-25T17:18:40.093Z  INFO 1 --- [swifttrack-core] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+swifttrack-core  | 2026-02-25T17:18:40.094Z  INFO 1 --- [swifttrack-core] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@3698f2ed]]
+swifttrack-core  | 2026-02-25T17:18:40.095Z  INFO 1 --- [swifttrack-core] [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+swifttrack-core  | 2026-02-25T17:18:40.103Z  INFO 1 --- [swifttrack-core] [           main] o.s.a.r.c.CachingConnectionFactory       : Attempting to connect to: [rabbitmq:5672]
+swifttrack-core  | 2026-02-25T17:18:40.205Z  INFO 1 --- [swifttrack-core] [           main] o.s.a.r.c.CachingConnectionFactory       : Created new connection: rabbitConnectionFactory#26401eda:0/SimpleConnection@411db18d [delegate=amqp://guest@172.19.0.2:5672/, localPort=52336]
+swifttrack-core  | 2026-02-25T17:18:40.214Z  INFO 1 --- [swifttrack-core] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_SWIFTTRACK-CORE/fe5ab6dd5cb4:swifttrack-core:8080 - registration status: 204
+swifttrack-core  | 2026-02-25T17:18:40.373Z  INFO 1 --- [swifttrack-core] [           main] l.s.swifttrack.SwiftTrackApplication     : Started SwiftTrackApplication in 33.686 seconds (process running for 36.625)
+swifttrack-core  | 2026-02-25T17:19:10.779Z  INFO 1 --- [swifttrack-core] [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+swifttrack-core  | 2026-02-25T17:19:10.779Z  INFO 1 --- [swifttrack-core] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+swifttrack-core  | 2026-02-25T17:19:10.783Z  INFO 1 --- [swifttrack-core] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+swifttrack-core  | 2026-02-25T17:19:22.230Z  INFO 1 --- [swifttrack-core] [ntContainer#0-1] l.s.swifttrack.orchestrator.SagaService  : SAGA START — processing order c22d4651-7b6b-417d-8f79-6b6844a94f1d
+swifttrack-core  | 2026-02-25T17:19:22.231Z  INFO 1 --- [swifttrack-core] [ntContainer#0-1] l.s.swifttrack.orchestrator.SagaService  : Step 1/3 — calling CMS-SOAP for order c22d4651-7b6b-417d-8f79-6b6844a94f1d
+swifttrack-core  | 2026-02-25T17:19:22.233Z DEBUG 1 --- [swifttrack-core] [ntContainer#0-1] l.s.s.integrations.ServiceDiscovery      : Resolved cms-soap via Eureka → http://cms-soap:8081
+swifttrack-core  | 2026-02-25T17:19:22.537Z ERROR 1 --- [swifttrack-core] [ntContainer#0-1] l.s.swifttrack.orchestrator.SagaService  : SAGA FAILED — order c22d4651-7b6b-417d-8f79-6b6844a94f1d — reason:  [404]
+swifttrack-core  | 2026-02-25T17:19:39.514Z  INFO 1 --- [swifttrack-core] [MessageBroker-1] o.s.w.s.c.WebSocketMessageBrokerStats    : WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 0 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(0)-CONNECTED(0)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], outboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0], sockJsScheduler[pool size = 1, active threads = 1, queued tasks = 0, completed tasks = 0]
+swifttrack-core  | 2026-02-25T17:23:40.991Z  INFO 1 --- [swifttrack-core] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+swifttrack-core  | 2026-02-25T17:24:03.494Z  INFO 1 --- [swifttrack-core] [ntContainer#0-1] l.s.swifttrack.orchestrator.SagaService  : SAGA START — processing order 85158d31-a099-4d91-b2ab-2141ac042b53
+swifttrack-core  | 2026-02-25T17:24:03.494Z  INFO 1 --- [swifttrack-core] [ntContainer#0-1] l.s.swifttrack.orchestrator.SagaService  : Step 1/3 — calling CMS-SOAP for order 85158d31-a099-4d91-b2ab-2141ac042b53
+swifttrack-core  | 2026-02-25T17:24:03.494Z DEBUG 1 --- [swifttrack-core] [ntContainer#0-1] l.s.s.integrations.ServiceDiscovery      : Resolved cms-soap via Eureka → http://cms-soap:8081
+swifttrack-core  | 2026-02-25T17:24:03.508Z ERROR 1 --- [swifttrack-core] [ntContainer#0-1] l.s.swifttrack.orchestrator.SagaService  : SAGA FAILED — order 85158d31-a099-4d91-b2ab-2141ac042b53 — reason:  [404]
+swifttrack-core  | 2026-02-25T17:28:42.553Z  INFO 1 --- [swifttrack-core] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+swifttrack-core  | 2026-02-25T17:29:54.815Z  WARN 1 --- [swifttrack-core] [nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('\' (code 92)): was expecting double-quote to start field name]
+swifttrack-core  | 2026-02-25T17:30:23.884Z  INFO 1 --- [swifttrack-core] [ntContainer#0-1] l.s.swifttrack.orchestrator.SagaService  : SAGA START — processing order 3f8c4ddb-dfba-49d3-92d0-f02c23a43b18
+swifttrack-core  | 2026-02-25T17:30:23.884Z  INFO 1 --- [swifttrack-core] [ntContainer#0-1] l.s.swifttrack.orchestrator.SagaService  : Step 1/3 — calling CMS-SOAP for order 3f8c4ddb-dfba-49d3-92d0-f02c23a43b18
+swifttrack-core  | 2026-02-25T17:30:23.885Z DEBUG 1 --- [swifttrack-core] [ntContainer#0-1] l.s.s.integrations.ServiceDiscovery      : Resolved cms-soap via Eureka → http://cms-soap:8081
+swifttrack-core  | 2026-02-25T17:30:23.900Z ERROR 1 --- [swifttrack-core] [ntContainer#0-1] l.s.swifttrack.orchestrator.SagaService  : SAGA FAILED — order 3f8c4ddb-dfba-49d3-92d0-f02c23a43b18 — reason:  [404]
+rabbitmq         | 2026-02-25 17:18:09.098553+00:00 [notice] <0.44.0> Application syslog exited with reason: stopped
+rabbitmq         | 2026-02-25 17:18:09.106573+00:00 [notice] <0.254.0> Logging: switching to configured handler(s); following messages may not be visible in this log output
+rabbitmq         | [38;5;87m2026-02-25 17:18:09.107772+00:00 [notice] <0.254.0> Logging: configured log handlers are now ACTIVE[0m
+rabbitmq         | 2026-02-25 17:18:09.158119+00:00 [info] <0.254.0> ra: starting system quorum_queues[0m
+rabbitmq         | 2026-02-25 17:18:09.158427+00:00 [info] <0.254.0> starting Ra system: quorum_queues in directory: /var/lib/rabbitmq/mnesia/rabbit@cd057b4dfe65/quorum/rabbit@cd057b4dfe65[0m
+rabbitmq         | 2026-02-25 17:18:09.433317+00:00 [info] <0.268.0> ra system 'quorum_queues' running pre init for 0 registered servers[0m
+rabbitmq         | 2026-02-25 17:18:09.458521+00:00 [info] <0.269.0> ra: meta data store initialised for system quorum_queues. 0 record(s) recovered[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:09.530096+00:00 [notice] <0.274.0> WAL: ra_log_wal init, open tbls: ra_log_open_mem_tables, closed tbls: ra_log_closed_mem_tables[0m
+rabbitmq         | 2026-02-25 17:18:09.641190+00:00 [info] <0.254.0> ra: starting system coordination[0m
+rabbitmq         | 2026-02-25 17:18:09.641384+00:00 [info] <0.254.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@cd057b4dfe65/coordination/rabbit@cd057b4dfe65[0m
+rabbitmq         | 2026-02-25 17:18:09.647462+00:00 [info] <0.282.0> ra system 'coordination' running pre init for 0 registered servers[0m
+rabbitmq         | 2026-02-25 17:18:09.649152+00:00 [info] <0.283.0> ra: meta data store initialised for system coordination. 0 record(s) recovered[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:09.649552+00:00 [notice] <0.288.0> WAL: ra_coordination_log_wal init, open tbls: ra_coordination_log_open_mem_tables, closed tbls: ra_coordination_log_closed_mem_tables[0m
+rabbitmq         | 2026-02-25 17:18:09.664858+00:00 [info] <0.254.0> ra: starting system coordination[0m
+rabbitmq         | 2026-02-25 17:18:09.664991+00:00 [info] <0.254.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@cd057b4dfe65/coordination/rabbit@cd057b4dfe65[0m
+rabbitmq         | 2026-02-25 17:18:10.143951+00:00 [info] <0.254.0> Waiting for Khepri leader for 30000 ms, 9 retries left[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:10.203882+00:00 [notice] <0.292.0> RabbitMQ metadata store: candidate -> leader in term: 1 machine version: 1[0m
+rabbitmq         | 2026-02-25 17:18:10.293170+00:00 [info] <0.254.0> Khepri leader elected[0m
+rabbitmq         | 2026-02-25 17:18:10.293331+00:00 [info] <0.254.0> Waiting for Khepri projections for 30000 ms, 9 retries left[0m
+rabbitmq         | 2026-02-25 17:18:11.522780+00:00 [info] <0.254.0> [0m
+rabbitmq         | 2026-02-25 17:18:11.522780+00:00 [info] <0.254.0>  Starting RabbitMQ 3.13.7 on Erlang 26.2.5.16 [jit][0m
+rabbitmq         | 2026-02-25 17:18:11.522780+00:00 [info] <0.254.0>  Copyright (c) 2007-2024 Broadcom Inc and/or its subsidiaries[0m
+rabbitmq         | 2026-02-25 17:18:11.522780+00:00 [info] <0.254.0>  Licensed under the MPL 2.0. Website: https://rabbitmq.com[0m
+rabbitmq         | 
+rabbitmq         |   ##  ##      RabbitMQ 3.13.7
+rabbitmq         |   ##  ##
+rabbitmq         |   ##########  Copyright (c) 2007-2024 Broadcom Inc and/or its subsidiaries
+rabbitmq         |   ######  ##
+rabbitmq         |   ##########  Licensed under the MPL 2.0. Website: https://rabbitmq.com
+rabbitmq         | 
+rabbitmq         |   Erlang:      26.2.5.16 [jit]
+rabbitmq         |   TLS Library: OpenSSL - OpenSSL 3.1.8 11 Feb 2025
+rabbitmq         |   Release series support status: see https://www.rabbitmq.com/release-information
+rabbitmq         | 
+rabbitmq         |   Doc guides:  https://www.rabbitmq.com/docs
+rabbitmq         |   Support:     https://www.rabbitmq.com/docs/contact
+rabbitmq         |   Tutorials:   https://www.rabbitmq.com/tutorials
+rabbitmq         |   Monitoring:  https://www.rabbitmq.com/docs/monitoring
+rabbitmq         |   Upgrading:   https://www.rabbitmq.com/docs/upgrade
+rabbitmq         | 
+rabbitmq         |   Logs: <stdout>
+rabbitmq         | 
+rabbitmq         |   Config file(s): /etc/rabbitmq/conf.d/10-defaults.conf
+rabbitmq         | 
+rabbitmq         |   Starting broker...2026-02-25 17:18:11.524779+00:00 [info] <0.254.0> [0m
+rabbitmq         | 2026-02-25 17:18:11.524779+00:00 [info] <0.254.0>  node           : rabbit@cd057b4dfe65[0m
+rabbitmq         | 2026-02-25 17:18:11.524779+00:00 [info] <0.254.0>  home dir       : /var/lib/rabbitmq[0m
+rabbitmq         | 2026-02-25 17:18:11.524779+00:00 [info] <0.254.0>  config file(s) : /etc/rabbitmq/conf.d/10-defaults.conf[0m
+rabbitmq         | 2026-02-25 17:18:11.524779+00:00 [info] <0.254.0>  cookie hash    : 6GKwkXypHJa4YIQsEGNC8w==[0m
+rabbitmq         | 2026-02-25 17:18:11.524779+00:00 [info] <0.254.0>  log(s)         : <stdout>[0m
+rabbitmq         | 2026-02-25 17:18:11.524779+00:00 [info] <0.254.0>  data dir       : /var/lib/rabbitmq/mnesia/rabbit@cd057b4dfe65[0m
+rabbitmq         | 2026-02-25 17:18:13.993418+00:00 [info] <0.254.0> Running boot step pre_boot defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:13.993657+00:00 [info] <0.254.0> Running boot step rabbit_global_counters defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:13.994245+00:00 [info] <0.254.0> Running boot step rabbit_osiris_metrics defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:13.994479+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:13.996230+00:00 [info] <0.254.0> Running boot step rabbit_alarm defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:14.076193+00:00 [info] <0.329.0> Memory high watermark set to 3123 MiB (3275004313 bytes) of 7808 MiB (8187510784 bytes) total[0m
+rabbitmq         | 2026-02-25 17:18:14.110707+00:00 [info] <0.331.0> Enabling free disk space monitoring (disk free space: 1009767997440, total memory: 8187510784)[0m
+rabbitmq         | 2026-02-25 17:18:14.110878+00:00 [info] <0.331.0> Disk free limit set to 50MB[0m
+rabbitmq         | 2026-02-25 17:18:14.138097+00:00 [info] <0.254.0> Running boot step code_server_cache defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:14.138350+00:00 [info] <0.254.0> Running boot step file_handle_cache defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:14.190255+00:00 [info] <0.334.0> Limiting to approx 1048479 file handles (943629 sockets)[0m
+rabbitmq         | 2026-02-25 17:18:14.190566+00:00 [info] <0.335.0> FHC read buffering: OFF[0m
+rabbitmq         | 2026-02-25 17:18:14.190646+00:00 [info] <0.335.0> FHC write buffering: ON[0m
+rabbitmq         | 2026-02-25 17:18:14.194495+00:00 [info] <0.254.0> Running boot step worker_pool defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:14.194703+00:00 [info] <0.315.0> Will use 8 processes for default worker pool[0m
+rabbitmq         | 2026-02-25 17:18:14.194793+00:00 [info] <0.315.0> Starting worker pool 'worker_pool' with 8 processes in it[0m
+rabbitmq         | 2026-02-25 17:18:14.195460+00:00 [info] <0.254.0> Running boot step database defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:14.196892+00:00 [info] <0.254.0> Peer discovery: configured backend: rabbit_peer_discovery_classic_config[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:14.208838+00:00 [notice] <0.316.0> Feature flags: attempt to enable `detailed_queues_endpoint`...[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:14.558773+00:00 [notice] <0.316.0> Feature flags: `detailed_queues_endpoint` enabled[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:14.559073+00:00 [notice] <0.316.0> Feature flags: attempt to enable `quorum_queue_non_voters`...[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:14.890357+00:00 [notice] <0.316.0> Feature flags: `quorum_queue_non_voters` enabled[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:14.890615+00:00 [notice] <0.316.0> Feature flags: attempt to enable `stream_update_config_command`...[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:15.189643+00:00 [notice] <0.316.0> Feature flags: `stream_update_config_command` enabled[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:15.190815+00:00 [notice] <0.316.0> Feature flags: attempt to enable `stream_filtering`...[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:15.530062+00:00 [notice] <0.316.0> Feature flags: `stream_filtering` enabled[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:15.530535+00:00 [notice] <0.316.0> Feature flags: attempt to enable `stream_sac_coordinator_unblock_group`...[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:15.889661+00:00 [notice] <0.316.0> Feature flags: `stream_sac_coordinator_unblock_group` enabled[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:15.889937+00:00 [notice] <0.316.0> Feature flags: attempt to enable `restart_streams`...[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:16.326133+00:00 [notice] <0.316.0> Feature flags: `restart_streams` enabled[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:16.326459+00:00 [notice] <0.316.0> Feature flags: attempt to enable `message_containers`...[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:16.598433+00:00 [notice] <0.316.0> Feature flags: `message_containers` enabled[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:16.598711+00:00 [notice] <0.316.0> Feature flags: attempt to enable `message_containers_deaths_v2`...[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:16.915566+00:00 [notice] <0.316.0> Feature flags: `message_containers_deaths_v2` enabled[0m
+rabbitmq         | 2026-02-25 17:18:16.916751+00:00 [info] <0.254.0> DB: virgin node -> run peer discovery[0m
+rabbitmq         | [38;5;214m2026-02-25 17:18:16.916946+00:00 [warning] <0.254.0> Classic peer discovery backend: list of nodes does not contain the local node [][0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:16.989300+00:00 [notice] <0.44.0> Application mnesia exited with reason: stopped[0m
+rabbitmq         | 2026-02-25 17:18:17.706516+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+rabbitmq         | 2026-02-25 17:18:17.706753+00:00 [info] <0.254.0> Successfully synced tables from a peer[0m
+rabbitmq         | 2026-02-25 17:18:17.706952+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+rabbitmq         | 2026-02-25 17:18:17.707067+00:00 [info] <0.254.0> Successfully synced tables from a peer[0m
+rabbitmq         | 2026-02-25 17:18:17.751399+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+rabbitmq         | 2026-02-25 17:18:17.751805+00:00 [info] <0.254.0> Successfully synced tables from a peer[0m
+rabbitmq         | 2026-02-25 17:18:17.752092+00:00 [info] <0.254.0> Running boot step tracking_metadata_store defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.752291+00:00 [info] <0.562.0> Setting up a table for connection tracking on this node: tracked_connection[0m
+rabbitmq         | 2026-02-25 17:18:17.752531+00:00 [info] <0.562.0> Setting up a table for per-vhost connection counting on this node: tracked_connection_per_vhost[0m
+rabbitmq         | 2026-02-25 17:18:17.752671+00:00 [info] <0.562.0> Setting up a table for per-user connection counting on this node: tracked_connection_per_user[0m
+rabbitmq         | 2026-02-25 17:18:17.752834+00:00 [info] <0.562.0> Setting up a table for channel tracking on this node: tracked_channel[0m
+rabbitmq         | 2026-02-25 17:18:17.752957+00:00 [info] <0.562.0> Setting up a table for channel tracking on this node: tracked_channel_per_user[0m
+rabbitmq         | 2026-02-25 17:18:17.753212+00:00 [info] <0.254.0> Running boot step networking_metadata_store defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.753536+00:00 [info] <0.254.0> Running boot step feature_flags defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.754053+00:00 [info] <0.254.0> Running boot step codec_correctness_check defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.754129+00:00 [info] <0.254.0> Running boot step external_infrastructure defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.754250+00:00 [info] <0.254.0> Running boot step rabbit_event defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.755209+00:00 [info] <0.254.0> Running boot step rabbit_registry defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.755414+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_amqplain defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.755674+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_cr_demo defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.755808+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_plain defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.755892+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_direct defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.756001+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_fanout defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.756229+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_headers defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.756365+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_topic defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.756662+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_all defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.757105+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_exactly defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.757471+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_nodes defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.757632+00:00 [info] <0.254.0> Running boot step rabbit_priority_queue defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.757694+00:00 [info] <0.254.0> Priority queues enabled, real BQ is rabbit_variable_queue[0m
+rabbitmq         | 2026-02-25 17:18:17.757827+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_client_local defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.758009+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_min_masters defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.758318+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_random defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.759559+00:00 [info] <0.254.0> Running boot step kernel_ready defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.759908+00:00 [info] <0.254.0> Running boot step rabbit_sysmon_minder defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.760400+00:00 [info] <0.254.0> Running boot step rabbit_epmd_monitor defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.762067+00:00 [info] <0.570.0> epmd monitor knows us, inter-node communication (distribution) port: 25672[0m
+rabbitmq         | 2026-02-25 17:18:17.762304+00:00 [info] <0.254.0> Running boot step guid_generator defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.782303+00:00 [info] <0.254.0> Running boot step rabbit_node_monitor defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.782860+00:00 [info] <0.574.0> Starting rabbit_node_monitor (in ignore mode)[0m
+rabbitmq         | 2026-02-25 17:18:17.783078+00:00 [info] <0.254.0> Running boot step delegate_sup defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.784164+00:00 [info] <0.254.0> Running boot step rabbit_memory_monitor defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.795691+00:00 [info] <0.254.0> Running boot step rabbit_fifo_dlx_sup defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.795949+00:00 [info] <0.254.0> Running boot step core_initialized defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.796015+00:00 [info] <0.254.0> Running boot step rabbit_channel_tracking_handler defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.796096+00:00 [info] <0.254.0> Running boot step rabbit_connection_tracking_handler defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.796307+00:00 [info] <0.254.0> Running boot step rabbit_definitions_hashing defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.796456+00:00 [info] <0.254.0> Running boot step rabbit_exchange_parameters defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.972443+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_misc defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.973435+00:00 [info] <0.254.0> Running boot step rabbit_policies defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.974312+00:00 [info] <0.254.0> Running boot step rabbit_policy defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.974496+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_validator defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.974781+00:00 [info] <0.254.0> Running boot step rabbit_quorum_memory_manager defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.974915+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.975068+00:00 [info] <0.254.0> Running boot step rabbit_stream_coordinator defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.975436+00:00 [info] <0.254.0> Running boot step rabbit_vhost_limit defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:17.975661+00:00 [info] <0.254.0> Running boot step rabbit_federation_parameters defined by app rabbitmq_federation[0m
+rabbitmq         | 2026-02-25 17:18:17.975968+00:00 [info] <0.254.0> Running boot step rabbit_federation_supervisor defined by app rabbitmq_federation[0m
+rabbitmq         | 2026-02-25 17:18:18.006808+00:00 [info] <0.254.0> Running boot step rabbit_federation_queue defined by app rabbitmq_federation[0m
+rabbitmq         | 2026-02-25 17:18:18.007151+00:00 [info] <0.254.0> Running boot step rabbit_federation_upstream_exchange defined by app rabbitmq_federation[0m
+rabbitmq         | 2026-02-25 17:18:18.007267+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_reset_handler defined by app rabbitmq_management[0m
+ros-rest         | 
+ros-rest         |   .   ____          _            __ _ _
+ros-rest         |  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+ros-rest         | ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ros-rest         |  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+ros-rest         |   '  |____| .__|_| |_|_| |_\__, | / / / /
+ros-rest         |  =========|_|==============|___/=/_/_/_/
+ros-rest         |  :: Spring Boot ::                (v3.2.5)
+ros-rest         | 
+ros-rest         | 2026-02-25T17:18:05.134Z  INFO 1 --- [ros-rest] [           main] lk.swiftlogistics.ros.RosApplication     : Starting RosApplication v1.0.0 using Java 17.0.18 with PID 1 (/app/app.jar started by root in /app)
+ros-rest         | 2026-02-25T17:18:05.141Z  INFO 1 --- [ros-rest] [           main] lk.swiftlogistics.ros.RosApplication     : No active profile set, falling back to 1 default profile: "default"
+ros-rest         | 2026-02-25T17:18:14.389Z  INFO 1 --- [ros-rest] [           main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d8031a1c-8766-3629-a646-094ddcee80e3
+ros-rest         | 2026-02-25T17:18:14.929Z  WARN 1 --- [ros-rest] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+ros-rest         | 2026-02-25T17:18:14.950Z  WARN 1 --- [ros-rest] [           main] trationDelegate$BeanPostProcessorChecker : Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+ros-rest         | 2026-02-25T17:18:16.201Z  INFO 1 --- [ros-rest] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+ros-rest         | 2026-02-25T17:18:16.252Z  INFO 1 --- [ros-rest] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+ros-rest         | 2026-02-25T17:18:16.258Z  INFO 1 --- [ros-rest] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+ros-rest         | 2026-02-25T17:18:16.404Z  INFO 1 --- [ros-rest] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+ros-rest         | 2026-02-25T17:18:16.415Z  INFO 1 --- [ros-rest] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 10824 ms
+ros-rest         | 2026-02-25T17:18:22.548Z  INFO 1 --- [ros-rest] [           main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+ros-rest         | 2026-02-25T17:18:22.734Z  WARN 1 --- [ros-rest] [           main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+ros-rest         | 2026-02-25T17:18:22.769Z  INFO 1 --- [ros-rest] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+ros-rest         | 2026-02-25T17:18:23.321Z  INFO 1 --- [ros-rest] [           main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+rabbitmq         | 2026-02-25 17:18:18.007338+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_db_handler defined by app rabbitmq_management_agent[0m
+rabbitmq         | 2026-02-25 17:18:18.007396+00:00 [info] <0.254.0> Management plugin: using rates mode 'basic'[0m
+rabbitmq         | 2026-02-25 17:18:18.007753+00:00 [info] <0.254.0> Running boot step recovery defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.084194+00:00 [info] <0.254.0> Running boot step empty_db_check defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.084419+00:00 [info] <0.254.0> Will seed default virtual host and user...[0m
+rabbitmq         | 2026-02-25 17:18:18.084668+00:00 [info] <0.254.0> Adding vhost '/' (description: 'Default virtual host', tags: [])[0m
+rabbitmq         | 2026-02-25 17:18:18.390063+00:00 [info] <0.634.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@cd057b4dfe65/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L' for vhost '/' exists[0m
+rabbitmq         | 2026-02-25 17:18:18.398079+00:00 [info] <0.634.0> Setting segment_entry_count for vhost '/' with 0 queues to '2048'[0m
+rabbitmq         | 2026-02-25 17:18:18.431636+00:00 [info] <0.634.0> Starting message stores for vhost '/'[0m
+rabbitmq         | 2026-02-25 17:18:18.432238+00:00 [info] <0.643.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_transient": using rabbit_msg_store_ets_index to provide index[0m
+rabbitmq         | 2026-02-25 17:18:18.441523+00:00 [info] <0.634.0> Started message store of type transient for vhost '/'[0m
+rabbitmq         | 2026-02-25 17:18:18.442087+00:00 [info] <0.647.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": using rabbit_msg_store_ets_index to provide index[0m
+rabbitmq         | [38;5;214m2026-02-25 17:18:18.451416+00:00 [warning] <0.647.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": rebuilding indices from scratch[0m
+rabbitmq         | 2026-02-25 17:18:18.453117+00:00 [info] <0.634.0> Started message store of type persistent for vhost '/'[0m
+rabbitmq         | 2026-02-25 17:18:18.453478+00:00 [info] <0.634.0> Recovering 0 queues of type rabbit_classic_queue took 54ms[0m
+rabbitmq         | 2026-02-25 17:18:18.453590+00:00 [info] <0.634.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms[0m
+rabbitmq         | 2026-02-25 17:18:18.453712+00:00 [info] <0.634.0> Recovering 0 queues of type rabbit_stream_queue took 0ms[0m
+rabbitmq         | 2026-02-25 17:18:18.468778+00:00 [info] <0.254.0> Created user 'guest'[0m
+rabbitmq         | 2026-02-25 17:18:18.480973+00:00 [info] <0.254.0> Successfully set user tags for user 'guest' to [administrator][0m
+rabbitmq         | 2026-02-25 17:18:18.501973+00:00 [info] <0.254.0> Successfully set permissions for user 'guest' in virtual host '/' to '.*', '.*', '.*'[0m
+rabbitmq         | 2026-02-25 17:18:18.502168+00:00 [info] <0.254.0> Running boot step rabbit_observer_cli defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.502395+00:00 [info] <0.254.0> Running boot step rabbit_looking_glass defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.502510+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics_gc defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.502972+00:00 [info] <0.254.0> Running boot step background_gc defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.503486+00:00 [info] <0.254.0> Running boot step routing_ready defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.503579+00:00 [info] <0.254.0> Running boot step pre_flight defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.504147+00:00 [info] <0.254.0> Running boot step notify_cluster defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.505448+00:00 [info] <0.254.0> Running boot step networking defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.505614+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue_periodic_membership_reconciliation defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.506236+00:00 [info] <0.254.0> Running boot step definition_import_worker_pool defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.506356+00:00 [info] <0.315.0> Starting worker pool 'definition_import_pool' with 8 processes in it[0m
+rabbitmq         | 2026-02-25 17:18:18.507238+00:00 [info] <0.254.0> Running boot step cluster_name defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.507412+00:00 [info] <0.254.0> Initialising internal cluster ID to 'rabbitmq-cluster-id-IgA0ZiGTbop6n4m1iAcWhA'[0m
+rabbitmq         | 2026-02-25 17:18:18.520041+00:00 [info] <0.254.0> Running boot step virtual_host_reconciliation defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.520512+00:00 [info] <0.254.0> Running boot step direct_client defined by app rabbit[0m
+rabbitmq         | 2026-02-25 17:18:18.520679+00:00 [info] <0.254.0> Running boot step rabbit_federation_exchange defined by app rabbitmq_federation[0m
+rabbitmq         | 2026-02-25 17:18:18.521094+00:00 [info] <0.254.0> Running boot step rabbit_management_load_definitions defined by app rabbitmq_management[0m
+rabbitmq         | 2026-02-25 17:18:18.521430+00:00 [info] <0.688.0> Resetting node maintenance status[0m
+rabbitmq         | [38;5;214m2026-02-25 17:18:19.159636+00:00 [warning] <0.717.0> Deprecated features: `management_metrics_collection`: Feature `management_metrics_collection` is deprecated.[0m
+rabbitmq         | [38;5;214m2026-02-25 17:18:19.159636+00:00 [warning] <0.717.0> By default, this feature can still be used for now.[0m
+rabbitmq         | [38;5;214m2026-02-25 17:18:19.159636+00:00 [warning] <0.717.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.[0m
+rabbitmq         | [38;5;214m2026-02-25 17:18:19.159636+00:00 [warning] <0.717.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:[0m
+rabbitmq         | [38;5;214m2026-02-25 17:18:19.159636+00:00 [warning] <0.717.0>     "deprecated_features.permit.management_metrics_collection = true"[0m
+rabbitmq         | [38;5;214m2026-02-25 17:18:19.159636+00:00 [warning] <0.717.0> To test RabbitMQ as if the feature was removed, set this in your configuration:[0m
+rabbitmq         | [38;5;214m2026-02-25 17:18:19.159636+00:00 [warning] <0.717.0>     "deprecated_features.permit.management_metrics_collection = false"[0m
+rabbitmq         | 2026-02-25 17:18:27.475339+00:00 [info] <0.754.0> Management plugin: HTTP (non-TLS) listener started on port 15672[0m
+rabbitmq         | 2026-02-25 17:18:27.475691+00:00 [info] <0.784.0> Statistics database started.[0m
+rabbitmq         | 2026-02-25 17:18:27.475848+00:00 [info] <0.783.0> Starting worker pool 'management_worker_pool' with 3 processes in it[0m
+rabbitmq         | 2026-02-25 17:18:27.531832+00:00 [info] <0.802.0> Prometheus metrics: HTTP (non-TLS) listener started on port 15692[0m
+rabbitmq         | 2026-02-25 17:18:27.532165+00:00 [info] <0.688.0> Ready to start client connection listeners[0m
+rabbitmq         | 2026-02-25 17:18:27.545095+00:00 [info] <0.846.0> started TCP listener on [::]:5672[0m
+rabbitmq         |  completed with 5 plugins.
+rabbitmq         | 2026-02-25 17:18:28.014137+00:00 [info] <0.688.0> Server startup complete; 5 plugins started.[0m
+rabbitmq         | 2026-02-25 17:18:28.014137+00:00 [info] <0.688.0>  * rabbitmq_prometheus[0m
+rabbitmq         | 2026-02-25 17:18:28.014137+00:00 [info] <0.688.0>  * rabbitmq_federation[0m
+rabbitmq         | 2026-02-25 17:18:28.014137+00:00 [info] <0.688.0>  * rabbitmq_management[0m
+rabbitmq         | 2026-02-25 17:18:28.014137+00:00 [info] <0.688.0>  * rabbitmq_management_agent[0m
+rabbitmq         | 2026-02-25 17:18:28.014137+00:00 [info] <0.688.0>  * rabbitmq_web_dispatch[0m
+rabbitmq         | 2026-02-25 17:18:28.016437+00:00 [info] <0.9.0> Time to start RabbitMQ: 30686 ms[0m
+rabbitmq         | 2026-02-25 17:18:40.137445+00:00 [info] <0.851.0> accepting AMQP connection <0.851.0> (172.19.0.7:52336 -> 172.19.0.2:5672)[0m
+rabbitmq         | 2026-02-25 17:18:40.190471+00:00 [info] <0.851.0> connection <0.851.0> (172.19.0.7:52336 -> 172.19.0.2:5672) has a client-provided name: rabbitConnectionFactory#26401eda:0[0m
+rabbitmq         | 2026-02-25 17:18:40.196825+00:00 [info] <0.851.0> connection <0.851.0> (172.19.0.7:52336 -> 172.19.0.2:5672 - rabbitConnectionFactory#26401eda:0): user 'guest' authenticated and granted access to vhost '/'[0m
+rabbitmq         | [38;5;87m2026-02-25 17:18:58.323751+00:00 [notice] <0.86.0>     alarm_handler: {set,{system_memory_high_watermark,[]}}[0m
+ros-rest         | 2026-02-25T17:18:23.999Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+ros-rest         | 2026-02-25T17:18:24.016Z  INFO 1 --- [ros-rest] [           main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+ros-rest         | 2026-02-25T17:18:24.144Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+ros-rest         | 2026-02-25T17:18:24.178Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+ros-rest         | 2026-02-25T17:18:24.180Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+ros-rest         | 2026-02-25T17:18:24.182Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+ros-rest         | 2026-02-25T17:18:24.186Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+ros-rest         | 2026-02-25T17:18:24.186Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+ros-rest         | 2026-02-25T17:18:24.187Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+ros-rest         | 2026-02-25T17:18:27.332Z  INFO 1 --- [ros-rest] [           main] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://eureka:8761/eureka/}, exception=I/O error on GET request for "http://eureka:8761/eureka/apps/": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://eureka:8761/eureka/apps/": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+ros-rest         | 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+ros-rest         | 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+ros-rest         | 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+ros-rest         | 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplicationsInternal(RestTemplateEurekaHttpClient.java:145)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.getApplications(RestTemplateEurekaHttpClient.java:135)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1045)
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:958)
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:396)
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:247)
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:242)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:68)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:321)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+ros-rest         | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+ros-rest         | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+ros-rest         | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:365)
+ros-rest         | 	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:375)
+ros-rest         | 	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:362)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+ros-rest         | 	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:128)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:116)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+ros-rest         | 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+ros-rest         | 	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:482)
+ros-rest         | 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+ros-rest         | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+ros-rest         | 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$SpringCGLIB$$0.getEurekaClient(<generated>)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:83)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:66)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:89)
+ros-rest         | 	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+ros-rest         | 	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:471)
+ros-rest         | 	at java.base/java.lang.Iterable.forEach(Unknown Source)
+ros-rest         | 	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:260)
+ros-rest         | 	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:205)
+ros-rest         | 	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:981)
+ros-rest         | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+ros-rest         | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+ros-rest         | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+ros-rest         | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+ros-rest         | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+ros-rest         | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+ros-rest         | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+ros-rest         | 	at lk.swiftlogistics.ros.RosApplication.main(RosApplication.java:9)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+ros-rest         | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:91)
+ros-rest         | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:53)
+ros-rest         | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:58)
+ros-rest         | Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+ros-rest         | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+ros-rest         | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+ros-rest         | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source)
+ros-rest         | 	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+ros-rest         | 	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+ros-rest         | 	at java.base/java.net.Socket.connect(Unknown Source)
+ros-rest         | 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+ros-rest         | 	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+ros-rest         | 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+ros-rest         | 	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+ros-rest         | 	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:184)
+ros-rest         | 	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+ros-rest         | 	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+ros-rest         | 	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+ros-rest         | 	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+ros-rest         | 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+ros-rest         | 	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+ros-rest         | 	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+ros-rest         | 	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+ros-rest         | 	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+ros-rest         | 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+ros-rest         | 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+ros-rest         | 	... 74 more
+ros-rest         | 
+ros-rest         | 2026-02-25T17:18:27.333Z  WARN 1 --- [ros-rest] [           main] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on GET request for "http://eureka:8761/eureka/apps/": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+ros-rest         | 2026-02-25T17:18:27.350Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ROS-REST/98c1ebc379a7:ros-rest:8082 - was unable to refresh its cache! This periodic background refresh will be retried in 30 seconds. status = Cannot execute request on any known server stacktrace = com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1045)
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:958)
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:396)
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:247)
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:242)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:68)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:321)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+ros-rest         | 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:140)
+ros-rest         | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:644)
+ros-rest         | 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1335)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1165)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:365)
+ros-rest         | 	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:375)
+ros-rest         | 	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:179)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:362)
+ros-rest         | 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+ros-rest         | 	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getTargetObject(EurekaRegistration.java:128)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration.getEurekaClient(EurekaRegistration.java:116)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+ros-rest         | 	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:281)
+ros-rest         | 	at org.springframework.cloud.context.scope.GenericScope$LockedScopedProxyFactoryBean.invoke(GenericScope.java:482)
+ros-rest         | 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+ros-rest         | 	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:768)
+ros-rest         | 	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:720)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaRegistration$$SpringCGLIB$$0.getEurekaClient(<generated>)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.maybeInitializeClient(EurekaServiceRegistry.java:83)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry.register(EurekaServiceRegistry.java:66)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration.start(EurekaAutoServiceRegistration.java:89)
+ros-rest         | 	at org.springframework.context.support.DefaultLifecycleProcessor.doStart(DefaultLifecycleProcessor.java:288)
+ros-rest         | 	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.start(DefaultLifecycleProcessor.java:471)
+ros-rest         | 	at java.base/java.lang.Iterable.forEach(Unknown Source)
+ros-rest         | 	at org.springframework.context.support.DefaultLifecycleProcessor.startBeans(DefaultLifecycleProcessor.java:260)
+ros-rest         | 	at org.springframework.context.support.DefaultLifecycleProcessor.onRefresh(DefaultLifecycleProcessor.java:205)
+ros-rest         | 	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:981)
+ros-rest         | 	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+ros-rest         | 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+ros-rest         | 	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+ros-rest         | 	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+ros-rest         | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+ros-rest         | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+ros-rest         | 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+ros-rest         | 	at lk.swiftlogistics.ros.RosApplication.main(RosApplication.java:9)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+ros-rest         | 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+ros-rest         | 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+ros-rest         | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:91)
+ros-rest         | 	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:53)
+ros-rest         | 	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:58)
+ros-rest         | 
+ros-rest         | 2026-02-25T17:18:27.364Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from primary servers failed
+ros-rest         | 2026-02-25T17:18:27.365Z  WARN 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Using default backup registry implementation which does not do anything.
+ros-rest         | 2026-02-25T17:18:27.368Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Initial registry fetch from backup servers failed
+ros-rest         | 2026-02-25T17:18:27.414Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+ros-rest         | 2026-02-25T17:18:27.432Z  INFO 1 --- [ros-rest] [           main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+ros-rest         | 2026-02-25T17:18:27.530Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1772039907516 with initial instances count: 0
+ros-rest         | 2026-02-25T17:18:27.548Z  INFO 1 --- [ros-rest] [           main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ROS-REST with eureka with status UP
+ros-rest         | 2026-02-25T17:18:27.561Z  INFO 1 --- [ros-rest] [           main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1772039907561, current=UP, previous=STARTING]
+ros-rest         | 2026-02-25T17:18:27.573Z  INFO 1 --- [ros-rest] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ROS-REST/98c1ebc379a7:ros-rest:8082: registering service...
+ros-rest         | 2026-02-25T17:18:27.824Z  INFO 1 --- [ros-rest] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path ''
+ros-rest         | 2026-02-25T17:18:27.878Z  INFO 1 --- [ros-rest] [           main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8082
+ros-rest         | 2026-02-25T17:18:28.130Z  INFO 1 --- [ros-rest] [           main] lk.swiftlogistics.ros.RosApplication     : Started RosApplication in 26.822 seconds (process running for 30.579)
+ros-rest         | 2026-02-25T17:18:28.324Z  INFO 1 --- [ros-rest] [nfoReplicator-0] c.n.d.s.t.d.RedirectingEurekaHttpClient  : Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://eureka:8761/eureka/}, exception=I/O error on POST request for "http://eureka:8761/eureka/apps/ROS-REST": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused stacktrace=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://eureka:8761/eureka/apps/ROS-REST": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+ros-rest         | 	at org.springframework.web.client.RestTemplate.createResourceAccessException(RestTemplate.java:915)
+ros-rest         | 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:895)
+ros-rest         | 	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:790)
+ros-rest         | 	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:672)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateEurekaHttpClient.register(RestTemplateEurekaHttpClient.java:77)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:121)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:80)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820)
+ros-rest         | 	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+ros-rest         | 	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+ros-rest         | 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+ros-rest         | 	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+ros-rest         | 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+ros-rest         | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+ros-rest         | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+ros-rest         | 	at java.base/java.lang.Thread.run(Unknown Source)
+ros-rest         | Caused by: org.apache.hc.client5.http.HttpHostConnectException: Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+ros-rest         | 	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+ros-rest         | 	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source)
+ros-rest         | 	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source)
+ros-rest         | 	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+ros-rest         | 	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+ros-rest         | 	at java.base/java.net.Socket.connect(Unknown Source)
+ros-rest         | 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.lambda$connectSocket$0(PlainConnectionSocketFactory.java:91)
+ros-rest         | 	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+ros-rest         | 	at org.apache.hc.client5.http.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:90)
+ros-rest         | 	at org.apache.hc.client5.http.socket.ConnectionSocketFactory.connectSocket(ConnectionSocketFactory.java:123)
+ros-rest         | 	at org.apache.hc.client5.http.impl.io.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:184)
+ros-rest         | 	at org.apache.hc.client5.http.impl.io.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:447)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:162)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.InternalExecRuntime.connectEndpoint(InternalExecRuntime.java:172)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ConnectExec.execute(ConnectExec.java:142)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ProtocolExec.execute(ProtocolExec.java:192)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.HttpRequestRetryExec.execute(HttpRequestRetryExec.java:96)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ContentCompressionExec.execute(ContentCompressionExec.java:152)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.RedirectExec.execute(RedirectExec.java:115)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.ExecChainElement.execute(ExecChainElement.java:51)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.InternalHttpClient.doExecute(InternalHttpClient.java:170)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:87)
+ros-rest         | 	at org.apache.hc.client5.http.impl.classic.CloseableHttpClient.execute(CloseableHttpClient.java:55)
+ros-rest         | 	at org.apache.hc.client5.http.classic.HttpClient.executeOpen(HttpClient.java:183)
+ros-rest         | 	at org.springframework.http.client.HttpComponentsClientHttpRequest.executeInternal(HttpComponentsClientHttpRequest.java:95)
+ros-rest         | 	at org.springframework.http.client.AbstractStreamingClientHttpRequest.executeInternal(AbstractStreamingClientHttpRequest.java:70)
+ros-rest         | 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+ros-rest         | 	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:112)
+ros-rest         | 	at org.springframework.cloud.netflix.eureka.http.RestTemplateTransportClientFactory.lambda$restTemplate$0(RestTemplateTransportClientFactory.java:143)
+ros-rest         | 	at org.springframework.http.client.InterceptingClientHttpRequest$InterceptingRequestExecution.execute(InterceptingClientHttpRequest.java:88)
+ros-rest         | 	at org.springframework.http.client.InterceptingClientHttpRequest.executeInternal(InterceptingClientHttpRequest.java:72)
+ros-rest         | 	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+ros-rest         | 	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+ros-rest         | 	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:889)
+ros-rest         | 	... 22 more
+ros-rest         | 
+ros-rest         | 2026-02-25T17:18:28.349Z  WARN 1 --- [ros-rest] [nfoReplicator-0] c.n.d.s.t.d.RetryableEurekaHttpClient    : Request execution failed with message: I/O error on POST request for "http://eureka:8761/eureka/apps/ROS-REST": Connect to http://eureka:8761 [eureka/172.20.0.2] failed: Connection refused
+ros-rest         | 2026-02-25T17:18:28.350Z  WARN 1 --- [ros-rest] [nfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ROS-REST/98c1ebc379a7:ros-rest:8082 - registration failed Cannot execute request on any known server
+ros-rest         | 
+ros-rest         | com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:na]
+ros-rest         | 	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+ros-rest         | 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[na:na]
+ros-rest         | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+ros-rest         | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+ros-rest         | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+ros-rest         | 
+ros-rest         | 2026-02-25T17:18:28.430Z  WARN 1 --- [ros-rest] [nfoReplicator-0] c.n.discovery.InstanceInfoReplicator     : There was a problem with the instance info replicator
+ros-rest         | 
+ros-rest         | com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:820) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101) ~[eureka-client-2.0.2.jar!/:2.0.2]
+ros-rest         | 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) ~[na:na]
+ros-rest         | 	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+ros-rest         | 	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source) ~[na:na]
+ros-rest         | 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) ~[na:na]
+ros-rest         | 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
+ros-rest         | 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
+ros-rest         | 
+ros-rest         | 2026-02-25T17:18:57.553Z  INFO 1 --- [ros-rest] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+ros-rest         | 2026-02-25T17:18:57.554Z  INFO 1 --- [ros-rest] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+ros-rest         | 2026-02-25T17:18:57.554Z  INFO 1 --- [ros-rest] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+ros-rest         | 2026-02-25T17:18:57.554Z  INFO 1 --- [ros-rest] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application is null : false
+ros-rest         | 2026-02-25T17:18:57.554Z  INFO 1 --- [ros-rest] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+ros-rest         | 2026-02-25T17:18:57.554Z  INFO 1 --- [ros-rest] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+ros-rest         | 2026-02-25T17:18:57.555Z  INFO 1 --- [ros-rest] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+ros-rest         | 2026-02-25T17:18:57.623Z  INFO 1 --- [ros-rest] [freshExecutor-0] com.netflix.discovery.DiscoveryClient    : The response status is 200
+ros-rest         | 2026-02-25T17:18:57.666Z  INFO 1 --- [ros-rest] [tbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ROS-REST/98c1ebc379a7:ros-rest:8082 - Re-registering apps/ROS-REST
+ros-rest         | 2026-02-25T17:18:57.666Z  INFO 1 --- [ros-rest] [tbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ROS-REST/98c1ebc379a7:ros-rest:8082: registering service...
+ros-rest         | 2026-02-25T17:18:57.679Z  INFO 1 --- [ros-rest] [tbeatExecutor-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ROS-REST/98c1ebc379a7:ros-rest:8082 - registration status: 204
+ros-rest         | 2026-02-25T17:23:25.750Z  INFO 1 --- [ros-rest] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+ros-rest         | 2026-02-25T17:28:27.306Z  INFO 1 --- [ros-rest] [trap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
