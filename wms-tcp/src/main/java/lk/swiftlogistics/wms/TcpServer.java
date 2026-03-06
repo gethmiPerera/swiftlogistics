@@ -33,20 +33,37 @@ public class TcpServer implements CommandLineRunner {
       String line = in.readLine();
       if (line == null) return;
 
-      // Expect: REGISTER|orderId|priority|pickup|drop
-      if (line.startsWith("REGISTER|")) {
-        String[] parts = line.split("\\|", 5);
-        String orderId = parts.length > 1 ? parts[1] : "unknown";
+      String[] parts = line.split("\\|", 5);
+      String command = parts[0];
 
-        System.out.println("[WMS] REGISTER received for " + orderId);
-
-        out.write("ACK|" + orderId + "\n");
-        out.flush();
-        return;
+      switch (command) {
+        case "REGISTER" -> {
+          String orderId = parts.length > 1 ? parts[1] : "unknown";
+          System.out.println("[WMS] REGISTER received for " + orderId);
+          out.write("ACK|" + orderId + "\n");
+          out.flush();
+        }
+        case "RELEASE" -> {
+          // Saga compensation — release package from warehouse
+          String orderId = parts.length > 1 ? parts[1] : "unknown";
+          System.out.println("[WMS] RELEASE (compensation) for " + orderId);
+          out.write("ACK|RELEASED|" + orderId + "\n");
+          out.flush();
+        }
+        case "STATUS" -> {
+          // Driver delivery status update
+          String orderId = parts.length > 1 ? parts[1] : "unknown";
+          String status = parts.length > 2 ? parts[2] : "unknown";
+          System.out.println("[WMS] STATUS UPDATE for " + orderId + " → " + status);
+          out.write("ACK|STATUS|" + orderId + "|" + status + "\n");
+          out.flush();
+        }
+        default -> {
+          System.out.println("[WMS] Unknown command: " + command);
+          out.write("NACK|bad_request\n");
+          out.flush();
+        }
       }
-
-      out.write("NACK|bad_request\n");
-      out.flush();
 
     } catch (Exception e) {
       System.err.println("[WMS] error: " + e.getMessage());

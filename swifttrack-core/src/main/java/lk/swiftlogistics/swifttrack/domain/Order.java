@@ -11,10 +11,15 @@ public class Order {
     @Id
     private UUID id;
 
+    private String displayId;
     private String clientId;
+    private String customerName;
     private String pickupAddress;
     private String dropAddress;
+    private String contactNumber;
     private String priority;
+    private String packageDetails;
+    private String driverId;
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
@@ -22,6 +27,7 @@ public class Order {
     private String cmsOrderId;
     private String routeId;
     private String failureReason;
+    private int retryCount;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -36,91 +42,56 @@ public class Order {
         updatedAt = LocalDateTime.now();
     }
 
-    public UUID getId() {
-        return id;
-    }
+    // ── Getters & Setters ──
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
+    public UUID getId() { return id; }
+    public void setId(UUID id) { this.id = id; }
 
-    public String getClientId() {
-        return clientId;
-    }
+    public String getDisplayId() { return displayId; }
+    public void setDisplayId(String displayId) { this.displayId = displayId; }
 
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
-    }
+    public String getClientId() { return clientId; }
+    public void setClientId(String clientId) { this.clientId = clientId; }
 
-    public String getPickupAddress() {
-        return pickupAddress;
-    }
+    public String getCustomerName() { return customerName; }
+    public void setCustomerName(String customerName) { this.customerName = customerName; }
 
-    public void setPickupAddress(String pickupAddress) {
-        this.pickupAddress = pickupAddress;
-    }
+    public String getPickupAddress() { return pickupAddress; }
+    public void setPickupAddress(String pickupAddress) { this.pickupAddress = pickupAddress; }
 
-    public String getDropAddress() {
-        return dropAddress;
-    }
+    public String getDropAddress() { return dropAddress; }
+    public void setDropAddress(String dropAddress) { this.dropAddress = dropAddress; }
 
-    public void setDropAddress(String dropAddress) {
-        this.dropAddress = dropAddress;
-    }
+    public String getContactNumber() { return contactNumber; }
+    public void setContactNumber(String contactNumber) { this.contactNumber = contactNumber; }
 
-    public String getPriority() {
-        return priority;
-    }
+    public String getPriority() { return priority; }
+    public void setPriority(String priority) { this.priority = priority; }
 
-    public void setPriority(String priority) {
-        this.priority = priority;
-    }
+    public String getPackageDetails() { return packageDetails; }
+    public void setPackageDetails(String packageDetails) { this.packageDetails = packageDetails; }
 
-    public OrderStatus getStatus() {
-        return status;
-    }
+    public String getDriverId() { return driverId; }
+    public void setDriverId(String driverId) { this.driverId = driverId; }
 
-    public void setStatus(OrderStatus status) {
-        this.status = status;
-    }
+    public OrderStatus getStatus() { return status; }
+    public void setStatus(OrderStatus status) { this.status = status; }
 
-    public String getCmsOrderId() {
-        return cmsOrderId;
-    }
+    public String getCmsOrderId() { return cmsOrderId; }
+    public void setCmsOrderId(String cmsOrderId) { this.cmsOrderId = cmsOrderId; }
 
-    public void setCmsOrderId(String cmsOrderId) {
-        this.cmsOrderId = cmsOrderId;
-    }
+    public String getRouteId() { return routeId; }
+    public void setRouteId(String routeId) { this.routeId = routeId; }
 
-    public String getRouteId() {
-        return routeId;
-    }
+    public String getFailureReason() { return failureReason; }
+    public void setFailureReason(String failureReason) { this.failureReason = failureReason; }
 
-    public void setRouteId(String routeId) {
-        this.routeId = routeId;
-    }
+    public int getRetryCount() { return retryCount; }
+    public void setRetryCount(int retryCount) { this.retryCount = retryCount; }
 
-    public String getFailureReason() {
-        return failureReason;
-    }
+    public LocalDateTime getCreatedAt() { return createdAt; }
+    public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
 
-    public void setFailureReason(String failureReason) {
-        this.failureReason = failureReason;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+    public LocalDateTime getUpdatedAt() { return updatedAt; }
+    public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
 }

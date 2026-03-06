@@ -3,6 +3,7 @@
            xmlns:tns="http://swiftlogistics.lk/cms"
            elementFormDefault="qualified">
 
+  <!-- ── Create Order ── -->
   <xs:element name="CreateOrderRequest">
     <xs:complexType>
       <xs:sequence>
@@ -18,6 +19,44 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="cmsOrderId" type="xs:string"/>
+        <xs:element name="status" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ── Cancel Order (Saga compensation) ── -->
+  <xs:element name="CancelOrderRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="orderId" type="xs:string"/>
+        <xs:element name="reason" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CancelOrderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="orderId" type="xs:string"/>
+        <xs:element name="status" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- ── Update Status (Driver delivery updates) ── -->
+  <xs:element name="UpdateStatusRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="orderId" type="xs:string"/>
+        <xs:element name="status" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="UpdateStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="orderId" type="xs:string"/>
         <xs:element name="status" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>

@@ -1,23 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Client Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Login – SwiftTrack</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="navbar">Client Login</div>
+<!-- CLIENT LOGIN PAGE (Mock authentication – submits to client.html on success) -->
 
-<div class="container">
-    <div class="card">
-        <h2>Client Login</h2>
-        <input placeholder="Email">
-        <input type="password" placeholder="Password">
-        <a href="client.html">
-            <button class="btn-primary">Login</button>
-        </a>
+<div class="auth-wrapper">
+    <div class="auth-box">
+
+        <div class="logo-text">Swift<span>Track</span></div>
+        <p class="subtitle">Client Portal Login</p>
+
+        <form id="client-login-form">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="e.g. client@swiftlogistics.lk" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg mt-1">Sign In</button>
+        </form>
+
+        <p class="text-center mt-2 text-muted" style="font-size:var(--font-sm)">
+            Demo credentials: <strong>client@swiftlogistics.lk</strong> / <strong>demo123</strong>
+        </p>
+
+        <p class="text-center mt-2 text-muted" style="font-size:var(--font-sm)">
+            <a href="index.html" style="color:var(--secondary-color)">&larr; Back to Home</a>
+        </p>
+
     </div>
 </div>
+
+<!-- Login Script (mock auth) -->
+<script>
+    document.getElementById("client-login-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const pass  = document.getElementById("password").value.trim();
+
+        // --- Mock Authentication ---
+        // In production this would call POST /api/auth/login via ApiService
+        if (!email || !pass) {
+            alert("Please enter email and password.");
+            return;
+        }
+
+        // Simulate 800ms API delay
+        const btn = this.querySelector("button[type=submit]");
+        btn.textContent = "Signing in…";
+        btn.disabled = true;
+
+        setTimeout(() => {
+            // Store mock session
+            sessionStorage.setItem("st_user", JSON.stringify({
+                name: "Nimal Perera",
+                email: email,
+                role: "client",
+                token: "mock-jwt-token-client"
+            }));
+            window.location.href = "client.html";
+        }, 800);
+    });
+</script>
 
 </body>
 </html>

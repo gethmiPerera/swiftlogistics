@@ -29,8 +29,13 @@ public class RosController {
     String orderId = String.valueOf(body.get("orderId"));
     String routeId = "ROUTE-" + orderId.substring(0, 8);
 
+    // Assign driver from a pool (simulated)
+    String[] drivers = {"DRV-001", "DRV-002", "DRV-003"};
+    String assignedDriver = drivers[rnd.nextInt(drivers.length)];
+
     return ResponseEntity.ok(Map.of(
       "routeId", routeId,
+      "driverAssigned", assignedDriver,
       "etaMinutes", 90,
       "message", "Optimized route created"
     ));

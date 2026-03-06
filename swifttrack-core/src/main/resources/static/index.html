@@ -1,24 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>SwiftTrack</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftTrack – Logistics Platform</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="navbar">SwiftTrack - Logistics Platform</div>
+<!-- LANDING PAGE (SwiftTrack entry point – choose Client or Driver portal) -->
 
-<div class="container">
-    <div class="card">
-        <h2>Welcome to SwiftTrack</h2>
-        <a href="client-login.html">
-            <button class="btn-primary">Client Portal</button>
-        </a>
-        <br><br>
-        <a href="driver-login.html">
-            <button class="btn-success">Driver Portal</button>
-        </a>
-    </div>
+<div class="landing-wrapper">
+
+    <!-- Top Nav -->
+    <nav class="landing-nav">
+        <div class="logo">Swift<span>Track</span></div>
+        <div>
+            <a href="client-login.html" class="btn btn-ghost">Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="landing-hero">
+        <h1>Real-Time Logistics,<br>Simplified.</h1>
+        <p>SwiftTrack integrates warehouse management, route optimisation and consignment tracking into one seamless platform for SwiftLogistics Sri Lanka.</p>
+
+        <!-- Portal Selector Cards -->
+        <div class="landing-cards">
+
+            <!-- Client Portal Card -->
+            <a href="client-login.html" class="landing-card">
+                <div class="icon">📦</div>
+                <h3>Client Portal</h3>
+                <p>Submit orders, track shipments and view delivery status in real time.</p>
+            </a>
+
+            <!-- Driver Portal Card -->
+            <a href="driver-login.html" class="landing-card">
+                <div class="icon">🚚</div>
+                <h3>Driver Portal</h3>
+                <p>View daily manifests, optimised routes and capture proof of delivery.</p>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="landing-footer">
+        &copy; 2026 SwiftLogistics (Pvt) Ltd &mdash; Middleware Architecture Assignment &mdash; SwiftTrack v1.0
+    </footer>
+
 </div>
 
 </body>

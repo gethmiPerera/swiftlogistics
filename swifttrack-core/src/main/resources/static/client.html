@@ -1,36 +1,321 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Client Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard – SwiftTrack</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-<div class="navbar">SwiftTrack - Client Dashboard</div>
+<body data-page="client">
 
-<div class="container">
+    <!-- CLIENT PORTAL – Full Dashboard with Sidebar Navigation-->
+    <!-- Sections: Dashboard · My Orders · New Order · Tracking -->
 
-    <div class="card">
-        <h2>Submit New Order</h2>
-        <input id="customerName" placeholder="Customer Name">
-        <input id="address" placeholder="Delivery Address">
-        <button class="btn-primary" onclick="submitOrder()">Submit Order</button>
+    <!-- Mobile sidebar overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+        <div class="sidebar-header">Swift<span>Track</span></div>
+        <nav class="sidebar-nav">
+            <a href="#" data-view="view-dashboard" class="active">
+                <span class="nav-icon">📊</span> Dashboard
+            </a>
+            <a href="#" data-view="view-orders">
+                <span class="nav-icon">📋</span> My Orders
+            </a>
+            <a href="#" data-view="view-neworder">
+                <span class="nav-icon">➕</span> New Order
+            </a>
+            <a href="#" data-view="view-tracking">
+                <span class="nav-icon">📡</span> Track Order
+            </a>
+            <a href="index.html">
+                <span class="nav-icon">🏠</span> Home
+            </a>
+            <a href="client-login.html" onclick="sessionStorage.clear()">
+                <span class="nav-icon">🚪</span> Logout
+            </a>
+        </nav>
+        <div class="sidebar-footer">SwiftLogistics &copy; 2026</div>
+    </aside>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <div class="main-content">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+                <span class="topbar-title">Dashboard</span>
+            </div>
+            <div class="topbar-right">
+                <div class="user-info">
+                    <span id="user-name">Client</span>
+                    <div class="avatar" id="user-avatar">C</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-content">
+
+            <!-- VIEW: DASHBOARD -->
+            <section id="view-dashboard" class="view-section active">
+
+                <!-- Stats Row -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">📦</div>
+                        <div class="stat-details">
+                            <div class="stat-value" id="stat-total">0</div>
+                            <div class="stat-label">Total Orders</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon amber">🚚</div>
+                        <div class="stat-details">
+                            <div class="stat-value" id="stat-transit">0</div>
+                            <div class="stat-label">In Transit</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">✅</div>
+                        <div class="stat-details">
+                            <div class="stat-value" id="stat-delivered">0</div>
+                            <div class="stat-label">Delivered</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon red">⏳</div>
+                        <div class="stat-details">
+                            <div class="stat-value" id="stat-pending">0</div>
+                            <div class="stat-label">Pending / Processing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders (compact) -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Recent Orders</h3>
+                        <a href="#" data-view="view-orders" class="btn btn-outline btn-sm"
+                            onclick="document.querySelector('[data-view=view-orders]').click()">View All</a>
+                    </div>
+                    <div class="card-body table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Status</th>
+                                    <th>Driver</th>
+                                    <th>Updated</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dashboard-orders-tbody">
+                                <!-- Rendered by JS (mirrors orders-tbody) -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder -->
+                <div class="card mt-2">
+                    <div class="card-header">
+                        <h3>Delivery Map Overview</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="map-placeholder">
+                            <span class="map-icon">🗺️</span>
+                            <span>Live Delivery Map</span>
+                            <small class="text-dim">Integration point for Google Maps / Leaflet.js</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Integration Info (for assignment demo) -->
+                <div class="card mt-2">
+                    <div class="card-header">
+                        <h3>System Integration Points</h3>
+                    </div>
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Backend System</th>
+                                    <th>Protocol</th>
+                                    <th>Purpose</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>CMS</strong> – Consignment Management</td>
+                                    <td>SOAP / XML</td>
+                                    <td>Legacy consignment records</td>
+                                    <td><span class="badge badge-delivered">Connected</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ROS</strong> – Route Optimisation</td>
+                                    <td>REST / JSON</td>
+                                    <td>Optimised delivery routes</td>
+                                    <td><span class="badge badge-delivered">Connected</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>WMS</strong> – Warehouse Management</td>
+                                    <td>TCP Socket</td>
+                                    <td>Warehouse inventory &amp; dispatch</td>
+                                    <td><span class="badge badge-delivered">Connected</span></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>WebSocket</strong> – Real-time Events</td>
+                                    <td>WS</td>
+                                    <td>Live status push notifications</td>
+                                    <td><span class="badge badge-pending" id="ws-status-badge">Connecting…</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- VIEW: MY ORDERS (full table) -->
+            <section id="view-orders" class="view-section">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>All Orders</h3>
+                        <button class="btn btn-primary btn-sm"
+                            onclick="document.querySelector('[data-view=view-neworder]').click()">+ New Order</button>
+                    </div>
+                    <div class="card-body table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Address</th>
+                                    <th>Contact</th>
+                                    <th>Status</th>
+                                    <th>Priority</th>
+                                    <th>Driver</th>
+                                    <th>Last Updated</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-tbody">
+                                <!-- Rendered by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- VIEW: SUBMIT NEW ORDER -->
+            <section id="view-neworder" class="view-section">
+
+                <div class="card" style="max-width:600px;">
+                    <div class="card-header">
+                        <h3>Submit New Order</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="order-form">
+                            <div class="form-group">
+                                <label for="inp-name">Customer Name *</label>
+                                <input type="text" id="inp-name" placeholder="Full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inp-pickup">Pickup Address *</label>
+                                <input type="text" id="inp-pickup" placeholder="Pickup location"
+                                    value="SwiftLogistics Warehouse" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inp-address">Delivery Address *</label>
+                                <input type="text" id="inp-address" placeholder="Street, City" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inp-package">Package Details</label>
+                                <textarea id="inp-package" placeholder="e.g. 2.5kg, 30×20×15 cm, Fragile electronics"
+                                    style="height:60px;resize:vertical;"></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="inp-contact">Contact Number *</label>
+                                    <input type="tel" id="inp-contact" placeholder="07X-XXXXXXX" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inp-priority">Priority</label>
+                                    <select id="inp-priority">
+                                        <option value="Normal">Normal</option>
+                                        <option value="High">High Priority</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg mt-1">Submit Order</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-muted" style="font-size:var(--font-sm)">
+                        Orders are sent via <strong>REST API → SwiftTrack Core → CMS (SOAP) + WMS (TCP) + ROS
+                            (REST)</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- VIEW: ORDER TRACKING -->
+            <section id="view-tracking" class="view-section">
+
+                <div class="card max-w-form">
+                    <div class="card-header">
+                        <h3>Track an Order</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="flex gap-1 items-center">
+                            <div class="form-group" style="flex:1;margin-bottom:0">
+                                <input type="text" id="inp-trackId" placeholder="Enter Order ID, e.g. SL-1001">
+                            </div>
+                            <button class="btn btn-primary" id="btn-track" style="height:40px">Track</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tracking-result" class="mt-2">
+                    <!-- Rendered by JS after track button click -->
+                </div>
+
+                <div id="tracking-map" class="mt-2">
+                    <!-- Map placeholder rendered by JS -->
+                </div>
+
+            </section>
+
+        </div><!-- end .page-content -->
+
+    </div><!-- end .main-content -->
+
+    <!-- ============ DEMO TOOLBAR (floating at bottom) ============ -->
+    <div class="demo-toolbar">
+        <span>🧪 Demo:</span>
+        <button class="btn btn-warning btn-sm" id="btn-demo-event">⚡ Trigger Real-Time Event</button>
     </div>
 
-    <div class="card">
-        <h2>My Orders</h2>
-        <div id="orders"></div>
-    </div>
+    <!-- Scripts -->
+    <!-- STOMP / SockJS for real-time WebSocket -->
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Show user name from session
+        const user = JSON.parse(sessionStorage.getItem("st_user") || "{}");
+        if (user.name) {
+            document.getElementById("user-name").textContent = user.name;
+            document.getElementById("user-avatar").textContent = user.name.charAt(0);
+        }
+    </script>
 
-    <div class="card">
-        <h2>Track Order</h2>
-        <a href="track.html">
-            <button class="btn-success">Go to Tracking</button>
-        </a>
-    </div>
-
-</div>
-
-<script src="js/app.js"></script>
 </body>
+
 </html>
